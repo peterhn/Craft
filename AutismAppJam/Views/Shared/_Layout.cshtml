@@ -18,7 +18,7 @@
 
 
 </head>
-<body>
+<body class="fixed-header-on">
     <header class="header fixed clearfix navbar navbar-fixed-top">
         <div class="container">
             <div class="row">
@@ -30,7 +30,7 @@
 
                         <!-- logo -->
                         <div class="logo smooth-scroll">
-                            <a href="#banner">
+                            <a href="/">
                                 <img id="logo" width="37px" height="44px" src="@Url.Content("~/Content/images/logo.png")" alt="autism"></a>
                         </div>
 
@@ -72,8 +72,12 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                            @if (!Request.IsAuthenticated)
+                                            {
+                                                <li><a href="home#about">About</a></li>
+                                            }
+                                            <li>@Html.Partial("_LogOnPartial")</li>
                                         </ul>
                                     </div>
 
