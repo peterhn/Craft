@@ -19,3 +19,5 @@ c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismA
 c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\obj\Debug\AutismAppJam.csprojResolveAssemblyReference.cache
 c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\obj\Debug\AutismAppJam.dll
 c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\obj\Debug\AutismAppJam.pdb
+c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\EntityFramework.SqlServer.dll
+c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\EntityFramework.SqlServer.xml
