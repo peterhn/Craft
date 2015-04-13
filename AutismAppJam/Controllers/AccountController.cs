@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using AutismAppJam.Models;
 using System.Security.Cryptography;
+using AutismAppJam.Repositories;
 
 namespace AutismAppJam.Controllers
 {
@@ -80,10 +81,14 @@ namespace AutismAppJam.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                MembershipUser user = Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+                    var userRepository = new UserRepository();
+
+                    userRepository.CreateNewUser(user, model);
+
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
@@ -149,27 +154,6 @@ namespace AutismAppJam.Controllers
         public ActionResult ChangePasswordSuccess()
         {
             return View();
-        }
-
-        private static string CreatePasswordHash(string pwd, string salt)
-        {
-            string saltAndPwd = String.Concat(pwd, salt);
-            string hashedPwd =
-                  FormsAuthentication.HashPasswordForStoringInConfigFile(
-                                                       saltAndPwd, "SHA1");
-            hashedPwd = String.Concat(hashedPwd, salt);
-            return hashedPwd;
-        }
-
-        private static string CreateSalt(int size)
-        {
-            // Generate a cryptographic random number using the cryptographic
-            // service provider
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-            byte[] buff = new byte[size];
-            rng.GetBytes(buff);
-            // Return a Base64 string representation of the random number
-            return Convert.ToBase64String(buff);
         }
 
         #region Status Codes

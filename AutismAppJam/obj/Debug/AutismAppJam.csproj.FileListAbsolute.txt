@@ -22,3 +22,13 @@ c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismA
 c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\EntityFramework.SqlServer.dll
 c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\EntityFramework.SqlServer.xml
 c:\users\peter nguyen\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\MySql.Data.dll
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\Dapper.dll
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.Common.dll
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.Interfaces.dll
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.OrmLite.dll
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.Text.dll
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\Dapper.pdb
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\Dapper.xml
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.Common.xml
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.Text.xml
+C:\Users\PETER NGUYEN\documents\visual studio 2012\Projects\AutismAppJam\AutismAppJam\bin\ServiceStack.OrmLite.SqlServer.dll
