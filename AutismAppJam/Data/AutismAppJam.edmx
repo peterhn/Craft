@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Applications" EntityType="Model.Store.Applications" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Memberships" EntityType="Model.Store.Memberships" store:Type="Tables" Schema="dbo" />
@@ -73,6 +73,7 @@
           <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
           <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
           <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+          <Property Name="DateOfBirth" Type="date" />
         </EntityType>
         <EntityType Name="Personalities">
           <Key>
@@ -109,6 +110,8 @@
           <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="IsAnonymous" Type="bit" Nullable="false" />
           <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="UsersInRoles">
           <Key>
@@ -202,8 +205,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -275,6 +277,7 @@
           <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Application" Relationship="Model.MembershipApplication" FromRole="Memberships" ToRole="Applications" />
           <NavigationProperty Name="User" Relationship="Model.MembershipUser" FromRole="Memberships" ToRole="Users" />
+          <Property Type="DateTime" Name="DateOfBirth" Precision="0" />
         </EntityType>
         <EntityType Name="Personality">
           <Key>
@@ -318,6 +321,8 @@
           <NavigationProperty Name="Membership" Relationship="Model.MembershipUser" FromRole="Users" ToRole="Memberships" />
           <NavigationProperty Name="Profile" Relationship="Model.UserProfile" FromRole="Users" ToRole="Profiles" />
           <NavigationProperty Name="Roles" Relationship="Model.UsersInRoles" FromRole="Users" ToRole="Roles" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="MembershipApplication">
           <End Role="Applications" Type="Model.Application" Multiplicity="1" />
@@ -401,6 +406,7 @@
           <EntitySetMapping Name="Memberships">
             <EntityTypeMapping TypeName="Model.Membership">
               <MappingFragment StoreEntitySet="Memberships">
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -455,6 +461,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />

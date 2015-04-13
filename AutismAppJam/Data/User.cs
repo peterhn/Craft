@@ -24,6 +24,8 @@ namespace AutismAppJam.Data
         public string UserName { get; set; }
         public bool IsAnonymous { get; set; }
         public System.DateTime LastActivityDate { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     
         public virtual Application Application { get; set; }
         public virtual Membership Membership { get; set; }

@@ -68,6 +68,7 @@
     <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Application" Relationship="Model.MembershipApplication" FromRole="Memberships" ToRole="Applications" />
     <NavigationProperty Name="User" Relationship="Model.MembershipUser" FromRole="Memberships" ToRole="Users" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="0" />
   </EntityType>
   <EntityType Name="Personality">
     <Key>
@@ -111,6 +112,8 @@
     <NavigationProperty Name="Membership" Relationship="Model.MembershipUser" FromRole="Users" ToRole="Memberships" />
     <NavigationProperty Name="Profile" Relationship="Model.UserProfile" FromRole="Users" ToRole="Profiles" />
     <NavigationProperty Name="Roles" Relationship="Model.UsersInRoles" FromRole="Users" ToRole="Roles" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="MembershipApplication">
     <End Role="Applications" Type="Model.Application" Multiplicity="1" />

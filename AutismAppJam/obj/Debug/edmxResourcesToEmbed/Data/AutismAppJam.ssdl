@@ -68,6 +68,7 @@
     <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
     <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
     <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+    <Property Name="DateOfBirth" Type="date" />
   </EntityType>
   <EntityType Name="Personalities">
     <Key>
@@ -104,6 +105,8 @@
     <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="UsersInRoles">
     <Key>

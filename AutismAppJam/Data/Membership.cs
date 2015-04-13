@@ -33,6 +33,7 @@ namespace AutismAppJam.Data
         public int FailedPasswordAnswerAttemptCount { get; set; }
         public System.DateTime FailedPasswordAnswerAttemptWindowsStart { get; set; }
         public string Comment { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
     
         public virtual Application Application { get; set; }
         public virtual User User { get; set; }
