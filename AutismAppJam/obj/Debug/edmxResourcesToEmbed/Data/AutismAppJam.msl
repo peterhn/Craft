@@ -39,6 +39,7 @@
     <EntitySetMapping Name="Personalities">
       <EntityTypeMapping TypeName="Model.Personality">
         <MappingFragment StoreEntitySet="Personalities">
+          <ScalarProperty Name="PersonalityDescription" ColumnName="PersonalityDescription" />
           <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
           <ScalarProperty Name="PersonalityName" ColumnName="PersonalityName" />
         </MappingFragment>

@@ -75,7 +75,8 @@
       <PropertyRef Name="PersonalityType" />
     </Key>
     <Property Name="PersonalityType" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
-    <Property Name="PersonalityName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="PersonalityName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" Nullable="false" />
+    <Property Type="String" Name="PersonalityDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Profile">
     <Key>

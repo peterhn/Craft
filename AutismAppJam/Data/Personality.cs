@@ -16,5 +16,6 @@ namespace AutismAppJam.Data
     {
         public string PersonalityType { get; set; }
         public string PersonalityName { get; set; }
+        public string PersonalityDescription { get; set; }
     }
 }

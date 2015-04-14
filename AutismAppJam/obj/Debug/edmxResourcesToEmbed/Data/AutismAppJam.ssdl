@@ -75,7 +75,8 @@
       <PropertyRef Name="PersonalityType" />
     </Key>
     <Property Name="PersonalityType" Type="nvarchar" Nullable="false" MaxLength="4" />
-    <Property Name="PersonalityName" Type="nchar" MaxLength="10" />
+    <Property Name="PersonalityName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PersonalityDescription" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Profiles">
     <Key>
