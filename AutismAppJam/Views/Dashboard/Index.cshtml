@@ -2,4 +2,52 @@
     ViewBag.Title = "Dashboard";
 }
 
-<h2>Index</h2>
+<style>
+
+    .body {
+        margin-top: 6em;
+    }
+
+    button {
+        margin: 1em 0;
+    }
+
+    .centerJumbo {
+        text-align: center;
+        background-color: #FFFFFF;
+    }
+
+</style>
+
+<div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-lg-2">
+                <h2>@User.Identity.Name</h2>
+                <!--Sidebar content-->
+                <img src="http://4.bp.blogspot.com/-8YBb5R5WDMI/T9JSlpwadKI/AAAAAAAAAWU/Z1lBDy3onms/s1600/sashimiSalmonTuna.jpg" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block"/>
+                <button type="button" class="btn btn-default">Edit Profile</button>
+
+                <button type="button" class="btn btn-default">Retake Test</button>
+                
+            </div>
+            <div class="col-lg-10">
+                <!--Body content-->
+                
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="jumbotron centerJumbo">
+                            <h1>Let's get started!</h1>
+                            <p>Welcome to Craft! The first thing you should do is take the personality test. It is the first step to determining the career that fits you!</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" role="button">Take the Test</a></p>
+                        </div>
+
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

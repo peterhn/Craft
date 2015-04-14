@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Rich Gang";
+    ViewBag.Title = "Craft";
 }
 <div id="banner" class="banner">
     <div class="banner-image"></div>
@@ -7,12 +7,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
-                    <h1 class="text-center">We are <span>Rich Gang</span></h1>
+                    <h1 class="text-center">We are <span>Craft</span></h1>
                     <p class="lead text-center">Advancing career development for the Autistic. It's a lifestyle.</p>
                     <div class="text-center">
                         <div class="btn-group" role="group">
                         @Html.ActionLink("Sign Up", "Register", "Account", null, new { @class ="btn btn-default" })
-                        @Html.ActionLink("Sign In", "LogOn", "Account", null, new { @class ="btn btn-default" })
+                        @Html.ActionLink("Login", "LogOn", "Account", null, new { @class ="btn btn-default" })
                         </div>
                     </div>
                 </div>
@@ -947,6 +947,11 @@
 <!-- footer end -->
 
     <script>
+
+        $(document).ready(function () {
+            $('#headerNavbar').addClass('navbar-fixed-top');
+        });
+
         //Scroll Spy
         //-----------------------------------------------
         $(window).scroll(function () {

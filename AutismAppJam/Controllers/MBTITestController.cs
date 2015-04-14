@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace AutismAppJam.Controllers
 {
-    public class DashboardController : Controller
+    public class MBTITestController : Controller
     {
         //
-        // GET: /Dashboard/
+        // GET: /MBTITest/
         [Authorize]
         public ActionResult Index()
         {
