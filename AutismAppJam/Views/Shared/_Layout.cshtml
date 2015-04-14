@@ -19,7 +19,7 @@
 
 </head>
 <body class="fixed-header-on">
-    <header class="header fixed clearfix navbar navbar-fixed-top">
+    <header class="header fixed clearfix navbar" id="headerNavbar">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -37,7 +37,7 @@
 
                         <!-- name-and-slogan -->
                         <div class="site-name-and-slogan smooth-scroll">
-                            <div class="site-name">@Html.ActionLink("Rich Gang", "Index", "Home")</div>
+                            <div class="site-name">@Html.ActionLink("Craft", "Index", "Home")</div>
                             <div class="site-slogan">Career Development for the Autistic</div>
                         </div>
 
@@ -97,7 +97,7 @@
         </div>
     </header>
 
-    @RenderBody()
+        @RenderBody()
 
 
 
