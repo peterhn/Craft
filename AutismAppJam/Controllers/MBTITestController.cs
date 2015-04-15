@@ -16,5 +16,11 @@ namespace AutismAppJam.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Index(List<string> question)
+        {
+
+            return View();
+        }
     }
 }

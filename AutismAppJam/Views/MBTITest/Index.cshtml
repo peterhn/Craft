@@ -2,4 +2,531 @@
     ViewBag.Title = "Personality Test";
 }
 
-<h2>Initial Test</h2>
+<h2>Personality Test</h2>
+
+<div class="container">
+
+    <div>
+        <h1>MBTI TEST</h1>
+        <h2>70 questions ~ 30 minutes</h2>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+            30%
+        </div>
+    </div>
+   
+
+    <form class="questions" action="" method="POST">
+
+        <div class="form-group group1">
+
+            <h2>1) At a party do you:</h2>
+
+            <input type="radio" name="question[0]" value="E1">interact with many, including strangers
+
+            <input type="radio" name="question[0]" value="I1">interact with a few, known to you <br>
+
+
+            <h2>2) Are you more:</h2>
+
+            <input type="radio" name="question[1]" value="S1">realistic
+
+            <input type="radio" name="question[1]" value="N1">philosophically inclined <br>
+
+
+            <h2>3) Are you more intrigued by:</h2>
+
+            <input type="radio" name="question[2]" value="S2">facts
+
+            <input type="radio" name="question[2]" value="N2">similes <br>
+
+
+            <h2>4) Are you usually more:</h2>
+
+            <input type="radio" name="question[3]" value="T1">fair minded
+
+            <input type="radio" name="question[3]" value="F1">kind hearted <br>
+
+
+            <h2>5) Do you tend to be more:</h2>
+
+            <input type="radio" name="question[4]" value="T2">dispassionate
+
+            <input type="radio" name="question[4]" value="F2">sympathetic <br>
+
+
+            <h2>6) Do you prefer to work:</h2>
+
+            <input type="radio" name="question[5]" value="J1">to deadlines
+
+            <input type="radio" name="question[5]" value="P1">just "whenever" <br>
+
+
+            <h2>7) Do you tend to choose:</h2>
+
+            <input type="radio" name="question[6]" value="J2">rather carefully
+
+            <input type="radio" name="question[6]" value="P2">somewhat impulsively <br>
+
+
+            <h2>8) At parties do you:</h2>
+
+            <input type="radio" name="question[7]" value="E1">stay late, with increasing energy
+
+            <input type="radio" name="question[7]" value="I1">leave early, with decreased energy <br>
+
+
+            <h2>9) Are you a more:</h2>
+
+            <input type="radio" name="question[8]" value="S1">sensible person
+
+            <input type="radio" name="question[8]" value="N1">reflective person <br>
+
+
+            <h2>10) Are you more drawn to:</h2>
+
+            <input type="radio" name="question[9]" value="S2">hard data
+
+            <input type="radio" name="question[9]" value="N2">abstruse ideas <br>
+
+            <button id="my-button">Finished!</button>
+
+        </div>
+
+        <div id="element_to_pop_up">
+            Good job bro!  Would you like to continue or leave?
+            <button class="b-close">Continue</button>
+        </div>
+
+        <div class="form-group group2">
+
+
+            <h2>11) Is it more natural for you to be:</h2>
+
+            <input type="radio" name="question11" value="T1">fair to others <br>
+
+            <input type="radio" name="question11" value="F1">nice to others <br>
+
+
+            <h2>12) In first approaching others are you more:</h2>
+
+            <input type="radio" name="question12" value="T2">impersonal and detached <br>
+
+            <input type="radio" name="question12" value="F2">personal and engaging <br>
+
+
+            <h2>13) Are you usually more:</h2>
+
+            <input type="radio" name="question13" value="J1">punctual <br>
+
+            <input type="radio" name="question13" value="P1">leisurely <br>
+
+
+            <h2>14) Does it bother you more having things:</h2>
+
+            <input type="radio" name="question14" value="J2">incomplete <br>
+
+            <input type="radio" name="question14" value="P2">completed <br>
+
+            <h2>15) In your social groups do you:</h2>
+
+            <input type="radio" name="question15" value="E1">keep abreast of others' happenings <br>
+
+            <input type="radio" name="question15" value="I1">get behind on the news <br>
+
+
+            <h2>16) Are you usually more interested in:</h2>
+
+            <input type="radio" name="question16" value="S1">specifics <br>
+
+            <input type="radio" name="question16" value="N1">concepts <br>
+
+
+            <h2>17) Do you prefer writers who:</h2>
+
+            <input type="radio" name="question17" value="S2">say what they mean <br>
+
+            <input type="radio" name="question17" value="N2">use lots of analogies <br>
+
+
+            <h2>18) Are you more naturally:</h2>
+
+            <input type="radio" name="question18" value="T1">impartial <br>
+
+            <input type="radio" name="question18" value="F1">compassionate <br>
+
+
+            <h2>19) In judging are you more likely to be:</h2>
+
+            <input type="radio" name="question19" value="T2">impersonal <br>
+
+            <input type="radio" name="question19" value="F2">sentimental <br>
+
+            <h2>20) Do you usually:</h2>
+
+            <input type="radio" name="question20" value="J1">settle things <br>
+
+            <input type="radio" name="question20" value="P1">keep options open <br>
+
+        </div>
+
+        <div class="form-group group3">
+
+            <h2>21) Are you usually rather:</h2>
+
+            <input type="radio" name="question21" value="J2">quick to agree to a time <br>
+
+            <input type="radio" name="question21" value="P2">reluctant to agree to a time <br>
+
+            <h2>22) In phoning do you:</h2>
+
+            <input type="radio" name="question22" value="E1">just start talking <br>
+
+            <input type="radio" name="question22" value="I1">rehearse what you'll say <br>
+
+            <h2>23) Facts:</h2>
+
+            <input type="radio" name="question23" value="S1">speak for themselves <br>
+
+            <input type="radio" name="question23" value="N1">usually require interpretation <br>
+
+            <h2>24) Do you prefer to work with:</h2>
+
+            <input type="radio" name="question24" value="S2">practical information <br>
+
+            <input type="radio" name="question24" value="N2">abstract ideas <br>
+
+            <h2>25) Are you inclined to be more:</h2>
+
+            <input type="radio" name="question25" value="T1">cool headed <br>
+
+            <input type="radio" name="question25" value="F1">warm hearted <br>
+
+            <h2>26) Would you rather be:</h2>
+
+            <input type="radio" name="question26" value="T2">more just than merciful <br>
+
+            <input type="radio" name="question26" value="F2">more merciful than just <br>
+
+            <h2>27) Are you more comfortable:</h2>
+
+            <input type="radio" name="question27" value="J1">setting a schedule <br>
+
+            <input type="radio" name="question27" value="P1">putting things off <br>
+
+            <h2>28) Are you more comfortable with:</h2>
+
+            <input type="radio" name="question28" value="J2">written agreements <br>
+
+            <input type="radio" name="question28" value="P2">handshake agreements <br>
+
+            <h2>29) In company do you:</h2>
+
+            <input type="radio" name="question29" value="E1">start conversations <br>
+
+            <input type="radio" name="question29" value="I1">wait to be approached <br>
+
+            <h2>30) Traditional common sense is:</h2>
+
+            <input type="radio" name="question30" value="S1">usually trustworthy <br>
+
+            <input type="radio" name="question30" value="N1">often misleading <br>
+
+
+        </div>
+
+        <div class="form-group group4">
+
+            <h2>31) Children often do not:</h2>
+
+            <input type="radio" name="question31" value="S2">make themselves useful enough <br>
+
+            <input type="radio" name="question31" value="N2">daydream enough <br>
+
+            <h2>32) Are you usually more:</h2>
+
+            <input type="radio" name="question32" value="T1">tough minded <br>
+
+            <input type="radio" name="question32" value="F1">tender hearted <br>
+
+            <h2>33) Are you more:</h2>
+
+            <input type="radio" name="question33" value="T2">firm than gentle <br>
+
+            <input type="radio" name="question33" value="F2">gentle than firm <br>
+
+            <h2>34) Are you more prone to keep things:</h2>
+
+            <input type="radio" name="question34" value="J1">well organized <br>
+
+            <input type="radio" name="question34" value="P1">open-ended <br>
+
+            <h2>35) Do you put more value on the:</h2>
+
+            <input type="radio" name="question35" value="J2">definite <br>
+
+            <input type="radio" name="question35" value="P2">variable <br>
+
+            <h2>36) Does new interaction with others:</h2>
+
+            <input type="radio" name="question36" value="E1">stimulate and energize you <br>
+
+            <input type="radio" name="question36" value="I1">tax your reserves <br>
+
+
+            <h2>37) Are you more frequently:</h2>
+
+            <input type="radio" name="question37" value="S1">a practical sort of person <br>
+
+            <input type="radio" name="question37" value="N1">an abstract sort of person <br>
+
+
+            <h2>38) Which are you drawn to:</h2>
+
+            <input type="radio" name="question38" value="S2">accurate perception <br>
+
+            <input type="radio" name="question38" value="N2">concept formation <br>
+
+
+            <h2>39) Which is more satisfying:</h2>
+
+            <input type="radio" name="question39" value="T1">to discuss an issue thoroughly <br>
+
+            <input type="radio" name="question39" value="F1">to arrive at agreement on an issue <br>
+
+
+            <h2>40) Which rules you more:</h2>
+
+            <input type="radio" name="question40" value="T2">your head <br>
+
+            <input type="radio" name="question40" value="F2">your heart <br>
+
+        </div>
+
+        <div class=" form-group group5">
+
+
+            <h2>41) Are you more comfortable with work:</h2>
+
+            <input type="radio" name="question41" value="J1">contracted <br>
+
+            <input type="radio" name="question41" value="P1">done on a casual basis <br>
+
+
+            <h2>42) Do you prefer things to be:</h2>
+
+            <input type="radio" name="question42" value="J2">neat and orderly <br>
+
+            <input type="radio" name="question42" value="P2">optional <br>
+
+
+            <h2>43) Do you prefer:</h2>
+
+            <input type="radio" name="question43" value="E1">many friends with brief contact <br>
+
+            <input type="radio" name="question43" value="I1">a few friends with longer contact <br>
+
+
+            <h2>44) Are you more drawn to:</h2>
+
+            <input type="radio" name="question44" value="S1">substantial information <br>
+
+            <input type="radio" name="question44" value="N1">credible assumptions <br>
+
+
+            <h2>45) Are you more interested in:</h2>
+
+            <input type="radio" name="question45" value="S2">production <br>
+
+            <input type="radio" name="question45" value="N2">research <br>
+
+
+            <h2>46) Are you more comfortable when you are:</h2>
+
+            <input type="radio" name="question46" value="T1">objective <br>
+
+            <input type="radio" name="question46" value="F1">personal <br>
+
+
+            <h2>47) Do you value in yourself more that you are:</h2>
+
+            <input type="radio" name="question47" value="T2">unwavering <br>
+
+            <input type="radio" name="question47" value="F2">devoted <br>
+
+
+            <h2>48) Are you more comfortable with:</h2>
+
+            <input type="radio" name="question48" value="J1">final statements <br>
+
+            <input type="radio" name="question48" value="P1">tentative statements <br>
+
+
+            <h2>49) Are you more comfortable:</h2>
+
+            <input type="radio" name="question49" value="J2">after a decision <br>
+
+            <input type="radio" name="question49" value="P2">before a decision <br>
+
+
+            <h2>50) Do you:</h2>
+
+            <input type="radio" name="question50" value="E1">speak easily and at length with strangers <br>
+
+            <input type="radio" name="question50" value="I1">find little to say to strangers <br>
+
+        </div>
+
+        <div class="form-group group6">
+
+
+            <h2>51) Are you usually more interested in the:</h2>
+
+            <input type="radio" name="question51" value="S1">particular instance <br>
+
+            <input type="radio" name="question51" value="N1">general case <br>
+
+
+            <h2>52) Do you feel:</h2>
+
+            <input type="radio" name="question52" value="S2">more practical than ingenious <br>
+
+            <input type="radio" name="question52" value="N2">more ingenious than practical <br>
+
+
+            <h2>53) Are you typically more a person of:</h2>
+
+            <input type="radio" name="question53" value="T1">clear reason <br>
+
+            <input type="radio" name="question53" value="F1">strong feeling <br>
+
+
+            <h2>54) Are you inclined more to be:</h2>
+
+            <input type="radio" name="question54" value="T2">fair-minded <br>
+
+            <input type="radio" name="question54" value="F2">sympathetic <br>
+
+
+            <h2>55) Is it preferable mostly to:</h2>
+
+            <input type="radio" name="question55" value="J1">make sure things are arranged <br>
+
+            <input type="radio" name="question55" value="P1">just let things happen <br>
+
+            <h2>56) Is it your way more to:</h2>
+
+            <input type="radio" name="question56" value="J2">get things settled <br>
+
+            <input type="radio" name="question56" value="P2">put off settlement <br>
+
+            <h2>57) When the phone rings do you:</h2>
+
+            <input type="radio" name="question57" value="E1">hasten to get to it first <br>
+
+            <input type="radio" name="question57" value="I1">hope someone else will answer <br>
+
+            <h2>58) Do you prize more in yourself a:</h2>
+
+            <input type="radio" name="question58" value="S1">good sense of reality <br>
+
+            <input type="radio" name="question58" value="N1">good imagination <br>
+
+            <h2>59) Are you more drawn to:</h2>
+
+            <input type="radio" name="question59" value="S2">fundamentals <br>
+
+            <input type="radio" name="question59" value="N2">overtones <br>
+
+            <h2>60) In judging are you usually more:</h2>
+
+            <input type="radio" name="question60" value="T1">neutral <br>
+
+            <input type="radio" name="question60" value="F1">charitable <br>
+
+        </div>
+
+        <div class="form-group group7">
+
+            <h2>61) Do you consider yourself more:</h2>
+
+            <input type="radio" name="question61" value="T2">clear headed <br>
+
+            <input type="radio" name="question61" value="F2">good willed <br>
+
+            <h2>62) Are you more prone to:</h2>
+
+            <input type="radio" name="question62" value="J1">schedule events <br>
+
+            <input type="radio" name="question62" value="P1">take things as they come <br>
+
+            <h2>63) Are you the person that is more:</h2>
+
+            <input type="radio" name="question63" value="J2">routinized <br>
+
+            <input type="radio" name="question63" value="P2">whimsical <br>
+
+            <h2>64) Are you more inclined to be:</h2>
+
+            <input type="radio" name="question64" value="E1">easy to approach <br>
+
+            <input type="radio" name="question64" value="I1">somewhat reserved <br>
+
+            <h2>65) Do you have more fun with:</h2>
+
+            <input type="radio" name="question65" value="S1">hands-on experience <br>
+
+            <input type="radio" name="question65" value="N1">blue-sky fantasy <br>
+
+            <h2>66) In writings do you prefer:</h2>
+
+            <input type="radio" name="question66" value="S2">the more literal <br>
+
+            <input type="radio" name="question66" value="N2">the more figurative <br>
+
+            <h2>67) Are you usually more:</h2>
+
+            <input type="radio" name="question67" value="T1">unbiased <br>
+
+            <input type="radio" name="question67" value="F1">compassionate <br>
+
+            <h2>68) Are you typically more:</h2>
+
+            <input type="radio" name="question68" value="T2">just than lenient <br>
+
+            <input type="radio" name="question68" value="F2">lenient than just <br>
+
+            <h2>69) Is it more like you to:</h2>
+
+            <input type="radio" name="question69" value="J1">make snap judgments <br>
+
+            <input type="radio" name="question69" value="P1">delay making judgments <br>
+
+            <h2>70) Do you tend to be more:</h2>
+
+            <input type="radio" name="question70" value="J2">deliberate than spontaneous <br>
+
+            <input type="radio" name="question70" value="P2">spontaneous than deliberate <br>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+</div>
