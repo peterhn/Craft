@@ -182,6 +182,7 @@
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\animations.css" />
     <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\question.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.min.css" />
@@ -305,6 +306,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\js\custom.js" />
+    <Content Include="Scripts\js\mbti.js" />
+    <Content Include="Scripts\js\popup.js" />
     <Content Include="Scripts\js\template.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\plugins\isotope\isotope.pkgd.js" />
