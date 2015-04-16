@@ -9,7 +9,7 @@
 }
 
 div.group1, div.group2, div.group3, div.group4, div.group5, div.group6, div.group7{
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@ div.group1, div.group2, div.group3, div.group4, div.group5, div.group6, div.grou
     clear:left;
 }
 
-#element_to_pop_up { 
+#pop_up_one, #pop_up_two, #pop_up_three, #pop_up_four, #pop_up_five, #pop_up_six { 
     background-color:#fff;
     border-radius:15px;
     color:#000;
@@ -31,9 +31,13 @@ div.group1, div.group2, div.group3, div.group4, div.group5, div.group6, div.grou
     min-height: 360px;
 }
 
-.b-close{
+.b-close {
     cursor:pointer;
     position:absolute;
     left: 70px;
     top:50px;
+}
+
+.progress {
+    margin-top: 2em;
 }
