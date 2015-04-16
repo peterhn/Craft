@@ -16,7 +16,7 @@ namespace AutismAppJam
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+         //   filters.Add(new HandleErrorAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -36,7 +36,7 @@ namespace AutismAppJam
             AreaRegistration.RegisterAllAreas();
 
             // Use LocalDB for Entity Framework by default
-            Database.DefaultConnectionFactory = new SqlConnectionFactory(@"Data Source=(localdb)\v11.0; Integrated Security=True; MultipleActiveResultSets=True");
+            //Database.DefaultConnectionFactory = new SqlConnectionFactory(@"Data Source=(localdb)\v11.0; Integrated Security=True; MultipleActiveResultSets=True");
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
