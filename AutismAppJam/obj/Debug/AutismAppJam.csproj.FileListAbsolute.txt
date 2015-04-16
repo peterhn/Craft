@@ -31,3 +31,4 @@ C:\Users\peter\Documents\GitHub\autismappjam\AutismAppJam\bin\System.Web.WebPage
 C:\Users\peter\Documents\GitHub\autismappjam\AutismAppJam\bin\System.Web.WebPages.Razor.xml
 C:\Users\peter\Documents\GitHub\autismappjam\AutismAppJam\obj\Debug\AutismAppJam.dll
 C:\Users\peter\Documents\GitHub\autismappjam\AutismAppJam\obj\Debug\AutismAppJam.pdb
+C:\Users\peter\Documents\GitHub\autismappjam\AutismAppJam\obj\Debug\AutismAppJam.csprojResolveAssemblyReference.cache
