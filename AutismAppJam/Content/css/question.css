@@ -1,0 +1,39 @@
+.container input {
+    margin-right: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;  
+}
+
+.container {
+	margin:2em;
+}
+
+div.group1, div.group2, div.group3, div.group4, div.group5, div.group6, div.group7{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.top-content {
+    float: left;
+}
+
+.questions {
+    clear:left;
+}
+
+#element_to_pop_up { 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:800px;
+    min-height: 360px;
+}
+
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    left: 70px;
+    top:50px;
+}
