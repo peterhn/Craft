@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutismAppJam.Data;
+using AutismAppJam.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,38 +24,64 @@ namespace AutismAppJam.Controllers
             int eSum, iSum, sSum, nSum, tSum, fSum, jSum, pSum;
             eSum = iSum = sSum = nSum = tSum = fSum = jSum = pSum = 0;
 
+            String resultType = "";
+
+            // Accumulates points from MBTI 
             foreach (string s in question)
             {
-                if (s == "E1")
+                if (s.Equals("E1"))
                     eSum++;
-                if (s == "I1")
+                if (s.Equals("I1"))
                     iSum++;
-                if (s == "S1")
+                if (s.Equals("S1"))
                     sSum++;
-                if (s == "S2") 
+                if (s.Equals("S2"))
                     sSum++;
-                if (s == "N2") 
+                if (s.Equals("N2"))
                     nSum++;
-                if (s == "T1")
+                if (s.Equals("T1"))
                     tSum++;
-                if (s == "F1")
+                if (s.Equals("F1"))
                     fSum++;
-                if (s == "T2") 
+                if (s.Equals("T2"))
                     tSum++;
-                if (s == "F2")
+                if (s.Equals("F2"))
                     fSum++;
-                if (s == "J1") 
+                if (s.Equals("J1"))
                     jSum++;
-                if (s == "P1") 
+                if (s.Equals("P1"))
                     pSum++;
-                if (s == "J2") 
+                if (s.Equals("J2"))
                     jSum++;
-                if (s == "P2") 
+                if (s.Equals("P2"))
                     pSum++;
-
-
             }
-            return View();
+
+            // Calculates Type 
+            if (eSum >= iSum)
+                resultType += "E";
+            else
+                resultType += "I";
+
+            if (sSum >= nSum)
+                resultType += "S";
+            else
+                resultType += "N";
+
+            if (tSum >= fSum)
+                resultType += "T";
+            else
+                resultType += "F";
+
+            if (jSum >= pSum)
+                resultType += "J";
+            else
+                resultType += "P";
+
+            PersonalityRepository pr = new PersonalityRepository();
+            Personality personality = pr.GetPersonality(resultType);
+
+            return View(personality);
         }
     }
 }

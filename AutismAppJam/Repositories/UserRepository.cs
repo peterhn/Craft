@@ -17,7 +17,6 @@ namespace AutismAppJam.Repositories
         {
             using (var db = Data.DatabaseContext.GetDbConnection())
             {
-                
                 db.Execute("UPDATE Memberships SET DateOfBirth = '" + registrationModel.DateOfBirth  + "' WHERE UserId = '" + user.ProviderUserKey + "'");
                 db.Execute("UPDATE Users SET FirstName = '" + registrationModel.FirstName + "', LastName = '" + registrationModel.LastName + "' WHERE UserId = '" + user.ProviderUserKey + "'");
             }

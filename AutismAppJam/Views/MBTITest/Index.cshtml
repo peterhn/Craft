@@ -1,4 +1,6 @@
-﻿@{
+﻿@Model AustismAppJam.Data.Personality
+
+@{
     ViewBag.Title = "Personality Test";
 }
 
@@ -9,7 +11,12 @@
 <script src="@Url.Content("~/Scripts/js/popup.js")"></script>
 
 <h2>Personality Test</h2>
-
+@if(Model != null)
+{
+    <div>@Model.PersonalityType</div>
+    <div>@Model.PersonalityName</div>
+    <div>@Model.PersonalityDescription</div>
+}
 <div class="container">
 
     <div class= "top-content">
