@@ -127,6 +127,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Property Name="PersonalityType" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="PersonalityName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PersonalityDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PersonalityImageURL" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Profiles">
           <Key>
@@ -632,6 +633,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Property Name="PersonalityDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="OccupationalTrends" Relationship="Model.FK_OccupationalTrends_Personalities" FromRole="Personality" ToRole="OccupationalTrend" />
           <NavigationProperty Name="Users" Relationship="Model.FK_Users_Personalities" FromRole="Personality" ToRole="User" />
+          <Property Name="PersonalityImageURL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -941,6 +943,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <EntitySetMapping Name="Personalities">
             <EntityTypeMapping TypeName="Model.Personality">
               <MappingFragment StoreEntitySet="Personalities">
+                <ScalarProperty Name="PersonalityImageURL" ColumnName="PersonalityImageURL" />
                 <ScalarProperty Name="PersonalityDescription" ColumnName="PersonalityDescription" />
                 <ScalarProperty Name="PersonalityName" ColumnName="PersonalityName" />
                 <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
