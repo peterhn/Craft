@@ -78,7 +78,8 @@ namespace AutismAppJam.Repositories
             {
                 using(var db = Data.DatabaseContext.GetDbConnection())
                 {
-                    db.Execute(string.Format("UPDATE Users SET PersonalityType = '{0}' WHERE UserId = '{1}'", userId, personality.PersonalityType));
+                    string query = string.Format("UPDATE Users SET PersonalityType = '{0}' WHERE UserId = '{1}'", personality.PersonalityType, userId);
+                    db.Execute(query);
                 }
 
                 return true;

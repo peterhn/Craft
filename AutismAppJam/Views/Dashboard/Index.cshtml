@@ -60,7 +60,7 @@
                 <br />
                 <!--Body content-->
                 
-                @*@if (Model.MBTITestId == null)
+                @if (Model.User.PersonalityType == null)
                 {
                     <div class="panel panel-primary">
                         <div class="panel-body">
@@ -76,56 +76,43 @@
                 }
                 else
                 {
-                    
-                }*@
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        <div class="container-fluid">
-                            <div class="row-fluid">
-                                <div class="col-lg-3">
-                                    <h1 class="type">TYPE: INTJ</h1>
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="col-lg-3">
+                                        <h1 class="type">TYPE: @Model.Personality.PersonalityType</h1>
+                                    </div>
+                                    <div class="col-lg-3 subtype">
+                                        <h3 class="type"><q>@Model.Personality.PersonalityName</q></h3>
+                                    </div>
+                                    <div class="col-lg-6 description">
+                                        <h6 class="type">@Model.Personality.PersonalityDescription </h6>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 subtype">
-                                    <h3 class="type"><q>The Architect</q></h3>
-                                </div>
-                                <div class="col-lg-6 description">
-                                    <h6 class="type">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet orci eros. Integer nec ipsum vulputate velit euismod rutrum vitae id elit. Aliquam erat volutpat. Nullam leo lacus, mollis in auctor id, pellentesque sit amet enim. Vestibulum in ligula vitae arcu </h6>
-                                </div>
-                            </div>
-                            <br />
-                            <br />
-                            <hr />
-                            <div class="row-fluid">
-                                <div class="col-lg-6">
-                                    <h5>Occupation Matches</h5>
-                                    <p class="occupationalTitle">Military</p>
-                                    <p class="occupational">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet orci eros. Integer nec ipsum vulputate velit euismod rutrum vitae id elit. Aliquam erat volutpat. Nullam leo lacus, mollis in auctor id, pellentesque sit amet enim. Vestibulum in ligula vitae arcu tincidunt finibus non a mauris. Nulla nec ex pulvinar, scelerisque elit quis, efficitur nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Quisque vitae elit eros. Curabitur maximus accumsan neque, a euismod eros tempor interdum. Pellentesque quis ex tellus. Sed lacinia maximus nibh. Aenean a dapibus purus. Cras non iaculis felis, ut eleifend ligula. Pellentesque eget ligula blandit, suscipit diam ac, lacinia tortor.
-                                    </p>
-                                    <p class="occupationalTitle">Agriculture</p>
-                                    <p class="occupational">
-                                        Etiam nulla magna, mollis a mauris quis, placerat volutpat orci. Vivamus sit amet ante volutpat, accumsan lorem eget, lacinia urna. Nullam auctor nulla a erat lobortis, sed maximus dui volutpat. Donec placerat, nulla quis bibendum cursus, ante nisl interdum est, eget volutpat justo arcu porttitor neque. Morbi pellentesque ligula nibh, a porttitor neque malesuada ut. Pellentesque interdum sem leo, id efficitur ex fermentum ut. Mauris commodo ipsum tortor, nec tempor sapien ullamcorper quis. Nunc eget tristique massa.
-                                    </p>
-                                    <p class="occupationalTitle">Law Enforcement</p>
-                                    <p class="occupational">
-                                        Maecenas faucibus dolor ut urna vestibulum, vitae eleifend mauris fringilla. Donec ornare ligula nunc, et dapibus lacus gravida sit amet. Donec feugiat lectus id dapibus accumsan. Nullam eu fringilla lacus, a cursus massa. Praesent ut rutrum tellus. Nunc gravida diam sed nisl interdum mattis. Proin commodo quam in nisi tempor hendrerit. Morbi feugiat fringilla enim pretium rhoncus. Aenean aliquet metus vitae ultricies molestie. Vestibulum egestas lacus at consequat blandit. Donec ut risus neque. Nam elementum dolor eu tellus viverra tincidunt. Curabitur elementum ut justo nec eleifend.
-                                    </p>
-                                    <p class="occupationalTitle">Military</p>
-                                    <p class="occupational">
-                                        Suspendisse sit amet ultrices lorem, non lacinia dui. Pellentesque vitae leo id massa malesuada porta in a lacus. Nullam a odio neque. Integer viverra nisi orci, non efficitur mauris semper eu. Duis vel mauris mi. Donec sit amet rhoncus nulla. Duis neque lorem, efficitur ac tortor eget, pellentesque suscipit ligula. Curabitur iaculis tristique neque et facilisis. Proin eleifend molestie justo, id euismod mi blandit quis. Nulla facilisi. Proin a ipsum elit. Fusce porta elit quis purus tempor, vel efficitur est pharetra. Sed vel justo sodales, porttitor tellus in, aliquam ante. Vestibulum fermentum sagittis orci.
-                                    </p>
-                                    <p class="occupationalTitle">Skilled Trades</p>
-                                    <p class="occupational">
-                                        Integer risus risus, fermentum sit amet nunc vitae, tempus ullamcorper ipsum. Aliquam nec ullamcorper nibh. Vestibulum feugiat efficitur porttitor. In eu tellus ut lorem vulputate interdum a ac quam. Aenean porttitor ac nunc id pulvinar. Integer a nulla bibendum, tristique felis in, fringilla massa. Fusce tempor finibus nulla ac efficitur. Sed sed ipsum ligula. Aliquam laoreet massa nunc, eget ultrices nisi pulvinar ac. Fusce odio quam, venenatis sit amet vulputate lacinia, sollicitudin dignissim mi. Pellentesque vulputate fringilla magna sed iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam hendrerit felis ut aliquam condimentum. Integer ultricies, augue in suscipit eleifend, eros leo malesuada mi, sit amet ullamcorper elit ante et purus. Etiam pellentesque nibh libero, ut rutrum nulla rhoncus sed.
-                                    </p>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h1>hi</h1>
+                                <br />
+                                <br />
+                                <hr />
+                                <div class="row-fluid">
+                                    <div class="col-lg-6">
+                                        <h5>Occupation Matches</h5>
+                                        @foreach (var occupation in Model.OccupationalTrends)
+                                        {
+                                            <p class="occupationalTitle">@occupation.Occupation</p>
+                                            <p class="occupational">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet orci eros. Integer nec ipsum vulputate velit euismod rutrum vitae id elit. Aliquam erat volutpat. Nullam leo lacus, mollis in auctor id, pellentesque sit amet enim. Vestibulum in ligula vitae arcu tincidunt finibus non a mauris. Nulla nec ex pulvinar, scelerisque elit quis, efficitur nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Quisque vitae elit eros. Curabitur maximus accumsan neque, a euismod eros tempor interdum. Pellentesque quis ex tellus. Sed lacinia maximus nibh. Aenean a dapibus purus. Cras non iaculis felis, ut eleifend ligula. Pellentesque eget ligula blandit, suscipit diam ac, lacinia tortor.
+                                            </p>
+                                        }
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h1>hi</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
+                
             </div>
         </div>
     </div>
