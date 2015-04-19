@@ -5,12 +5,11 @@
 }
 
 <style>
-
     .body {
         margin-top: 6em;
     }
 
-    button {
+    .buttonstyle {
         margin: 1em;
     }
 
@@ -32,14 +31,13 @@
     }
 
     .occupationalTitle {
-        font-size:12px;
+        font-size: 12px;
         font-weight: bold;
     }
 
     .occupational {
-        font-size:12px;
+        font-size: 12px;
     }
-
 </style>
 
 <div>
@@ -55,19 +53,18 @@
                 else
                 {
                     <img src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
-                }
 
-                <button type="button" class="btn btn-default active">Profile</button>
-                <button type="button" class="btn btn-default">Video Archive</button>
-                <button type="button" class="btn btn-default">Interview Prep</button>
-                <button type="button" class="btn btn-default">Career Stories</button>
-                
+                }
+                <button type="button" class="buttonstyle btn btn-default active">Profile</button>
+                <button type="button" class="buttonstyle btn btn-default">Video Archive</button>
+                @Html.ActionLink("Interview Prep", "Index", "Interview", null, new { @class = "btn btn-default buttonstyle" })
+                <button type="button" class="buttonstyle btn btn-default">Career Stories</button>
+
             </div>
             <div class="col-lg-10">
                 <br />
                 <br />
                 <!--Body content-->
-                
                 @if (Model.User.PersonalityType == null)
                 {
                     <div class="panel panel-primary">
@@ -77,8 +74,6 @@
                                 <p>Welcome to Craft! The first thing you should do is take the personality test. It is the first step to determining the career that fits you!</p>
                                 <p>@Html.ActionLink("Take the Test", "Index", "MBTITest", null, new { @class = "btn btn-primary btn-lg" })</p>
                             </div>
-
-
                         </div>
                     </div>
                 }
@@ -108,7 +103,7 @@
                                         {
                                             <p class="occupationalTitle">@occupation.Occupation</p>
                                             <p class="occupational">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet orci eros. Integer nec ipsum vulputate velit euismod rutrum vitae id elit. Aliquam erat volutpat. Nullam leo lacus, mollis in auctor id, pellentesque sit amet enim. Vestibulum in ligula vitae arcu tincidunt finibus non a mauris. Nulla nec ex pulvinar, scelerisque elit quis, efficitur nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Quisque vitae elit eros. Curabitur maximus accumsan neque, a euismod eros tempor interdum. Pellentesque quis ex tellus. Sed lacinia maximus nibh. Aenean a dapibus purus. Cras non iaculis felis, ut eleifend ligula. Pellentesque eget ligula blandit, suscipit diam ac, lacinia tortor.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet orci eros. Integer nec ipsum vulputate velit euismod rutrum vitae id elit. Aliquam erat volutpat. Nullam leo lacus, mollis in auctor id, pellentesque sit amet enim. Vestibulum in ligula vitae arcu tincidunt finibus non a mauris. Nulla nec ex pulvinar, scelerisque elit quis, efficitur nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Quisque vitae elit eros. Curabitur maximus accumsan neque, a euismod eros tempor interdum. Pellentesque quis ex tellus. Sed lacinia maximus nibh. Aenean a dapibus purus. Cras non iaculis felis, ut eleifend ligula. Pellentesque eget ligula blandit, suscipit diam ac, lacinia tortor.
                                             </p>
                                         }
                                     </div>
@@ -120,7 +115,6 @@
                         </div>
                     </div>
                 }
-                
             </div>
         </div>
     </div>
