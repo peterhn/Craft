@@ -15,13 +15,61 @@ namespace AutismAppJam.Repositories
     {
         public bool CreateNewUser(MembershipUser user, RegisterModel registrationModel)
         {
-            using (var db = Data.DatabaseContext.GetDbConnection())
+            try
             {
-                db.Execute("UPDATE Memberships SET DateOfBirth = '" + registrationModel.DateOfBirth  + "' WHERE UserId = '" + user.ProviderUserKey + "'");
-                db.Execute("UPDATE Users SET FirstName = '" + registrationModel.FirstName + "', LastName = '" + registrationModel.LastName + "' WHERE UserId = '" + user.ProviderUserKey + "'");
+                using (var db = Data.DatabaseContext.GetDbConnection())
+                {
+                    db.Execute("UPDATE Users SET DateOfBirth = '" + registrationModel.DateOfBirth + "' WHERE UserId = '" + user.ProviderUserKey + "'");
+                    db.Execute("UPDATE Users SET FirstName = '" + registrationModel.FirstName + "', LastName = '" + registrationModel.LastName + "' , Email = '"+ registrationModel.Email  +"' WHERE UserId = '" + user.ProviderUserKey + "'");
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
             }
 
-            return false;
+        }
+
+        public ApplicationUser GetUserByUsername(string username)
+        {
+            try
+            {
+                using (var db = Data.DatabaseContext.GetDbConnection())
+                {
+                    var users = (List<User>)db.Query<User>("SELECT * FROM Users WHERE Username = '" + username + "");
+                    var user = users[0];
+
+                    var applicationUser = new ApplicationUser();
+                    applicationUser.UserName = user.UserName;
+                    applicationUser.Id = user.UserId.ToString();
+                    applicationUser.FirstName = user.FirstName;
+                    applicationUser.LastName = user.LastName;
+                    applicationUser.Email = user.Email;
+
+                    return applicationUser;
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public User GetUserById(string userId)
+        {
+            try
+            {
+                using(var db = Data.DatabaseContext.GetDbConnection())
+                {
+                    var users = (List<User>)db.Query<User>("SELECT * FROM Users WHERE UserId = '" + userId + "'");
+                    return users.First();
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

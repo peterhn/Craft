@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AutismAppJam.Data.User
+
+@{
     ViewBag.Title = "Dashboard";
 }
 
@@ -34,17 +36,21 @@
             <div class="col-lg-10">
                 <!--Body content-->
                 
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        <div class="jumbotron centerJumbo">
-                            <h1>Let's get started!</h1>
-                            <p>Welcome to Craft! The first thing you should do is take the personality test. It is the first step to determining the career that fits you!</p>
-                            <p>@Html.ActionLink("Take the Test", "Index", "MBTITest", null, new { @class = "btn btn-primary btn-lg" })</p>
+                @if (Model.MBTITestId == null)
+                {
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <div class="jumbotron centerJumbo">
+                                <h1>Let's get started!</h1>
+                                <p>Welcome to Craft! The first thing you should do is take the personality test. It is the first step to determining the career that fits you!</p>
+                                <p>@Html.ActionLink("Take the Test", "Index", "MBTITest", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            </div>
+
+
                         </div>
-
-
                     </div>
-                </div>
+                }
+                
                 
             </div>
         </div>

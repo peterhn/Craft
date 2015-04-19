@@ -14,8 +14,15 @@ namespace AutismAppJam.Data
     
     public partial class Personality
     {
+        public Personality()
+        {
+            this.OccupationalTrends = new HashSet<OccupationalTrend>();
+        }
+    
         public string PersonalityType { get; set; }
         public string PersonalityName { get; set; }
         public string PersonalityDescription { get; set; }
+    
+        public virtual ICollection<OccupationalTrend> OccupationalTrends { get; set; }
     }
 }

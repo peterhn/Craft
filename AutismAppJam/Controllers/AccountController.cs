@@ -8,11 +8,25 @@ using System.Web.Security;
 using AutismAppJam.Models;
 using System.Security.Cryptography;
 using AutismAppJam.Repositories;
+using System.Security.Claims;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
+using Microsoft.Owin.Security;
 
 namespace AutismAppJam.Controllers
 {
     public class AccountController : Controller
     {
+        public AccountController()
+            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+        {
+        }
+
+        public AccountController(UserManager<ApplicationUser> userManager)
+        {
+            UserManager = userManager;
+        }
 
         //
         // GET: /Account/LogOn
@@ -21,6 +35,8 @@ namespace AutismAppJam.Controllers
         {
             return View();
         }
+
+        public UserManager<ApplicationUser> UserManager { get; private set; }
 
         //
         // POST: /Account/LogOn
@@ -32,6 +48,9 @@ namespace AutismAppJam.Controllers
             {
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
+                    var userRepository = new UserRepository();
+                    var user = userRepository.GetUserByUsername(model.UserName);
+                    SignInUser(user, model.RememberMe);
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
@@ -59,6 +78,7 @@ namespace AutismAppJam.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
+            AuthenticationManager.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
@@ -79,17 +99,28 @@ namespace AutismAppJam.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
+                //Attempt to register the user
                 MembershipCreateStatus createStatus;
                 MembershipUser user = Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
+                
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     var userRepository = new UserRepository();
-
                     userRepository.CreateNewUser(user, model);
 
+                    var appuser = new ApplicationUser() { UserName = model.UserName };
+                    appuser.FirstName = model.FirstName;
+                    appuser.LastName = model.LastName;
+                    appuser.Email = model.Email;
+                    appuser.DateOfBirth = model.DateOfBirth;
+                    appuser.Id = user.ProviderUserKey.ToString();
+
+                    // Store Gender as Claim
+                    appuser.Claims.Add(new IdentityUserClaim() { ClaimType = ClaimTypes.Gender, ClaimValue = "Male" });
+
+                    SignInUser(appuser, isPersistent: false);
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                 
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -151,9 +182,42 @@ namespace AutismAppJam.Controllers
         //
         // GET: /Account/ChangePasswordSuccess
 
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
+
         public ActionResult ChangePasswordSuccess()
         {
             return View();
+        }
+
+        private void SignInUser(ApplicationUser user, bool isPersistent)
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+
+            var claims = new List<Claim>();
+            // claims.Add(new Claim(ClaimTypes.Name, user.FirstName.Trim() + " " + user.LastName.Trim()));
+            claims.Add(new Claim(ClaimTypes.GivenName, user.FirstName.Trim() + " " + user.LastName.Trim()));
+            claims.Add(new Claim(ClaimTypes.Name, user.UserName));
+            claims.Add(new Claim(ClaimTypes.Email, user.Email));
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
+            claims.Add(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", user.Id));
+            //claims.Add(new Claim(ClaimTypes.UserData, Helpers.JsonHelper.Serialize(user.UserData)));
+            var identity = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
+
+            AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = isPersistent }, identity);
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
         }
 
         #region Status Codes

@@ -15,12 +15,18 @@ namespace AutismAppJam.Controllers
         [Authorize]
         public ActionResult Index()
         {
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(List<string> question)
         {
+            if(question == null)
+            {
+                question = new List<string>();
+            }
+
             int eSum, iSum, sSum, nSum, tSum, fSum, jSum, pSum;
             eSum = iSum = sSum = nSum = tSum = fSum = jSum = pSum = 0;
 
