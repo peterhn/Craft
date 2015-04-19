@@ -22,6 +22,10 @@ public partial class OccupationalTrend
 
     public string PersonalityType { get; set; }
 
+    public string OccupationDescription { get; set; }
+
+    public string OccupationImageURL { get; set; }
+
 
 
     public virtual Personality Personality { get; set; }

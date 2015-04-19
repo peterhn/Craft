@@ -24,7 +24,7 @@ OccupationImageURL = '../Content/images/occupation/educator.jpg'
 WHERE Occupation = 'Education';
 
 UPDATE OccupationalTrends
-SET OccupationDescription = "Responsible for caring for sick, injured, or disabled people in a healthcare setting. Works under the direction of a registered nurse. Examples of responsibilities includes: care for people who are sick, injured, convalescent, or disabled, providing bedside care, or recording patients' vital signs such as height, weight, temperature, blood pressure, pulse, and respiration",
+SET OccupationDescription = 'Responsible for caring for sick, injured, or disabled people in a healthcare setting. Works under the direction of a registered nurse. Examples of responsibilities includes: care for people who are sick, injured, convalescent, or disabled, providing bedside care, or recording patients'' vital signs such as height, weight, temperature, blood pressure, pulse, and respiration',
 OccupationImageURL = '../Content/images/occupation/healthcare.jpg'
 WHERE Occupation = 'Health Care';
 
@@ -54,7 +54,7 @@ OccupationImageURL = '../Content/images/occupation/scientist.jpg'
 WHERE Occupation = 'Science';
 
 UPDATE OccupationalTrends
-SET OccupationDescription = "A field service technician is a general term for any repair or assessment technician who travels to a site to troubleshoot equipment problems. A field service technician may work for a product manufacturer or be employed by a dedicated team of repairmen, such as Best Buy's Geek Squad, whose job is to repair and maintain all makes and models of a particular type of product.",
+SET OccupationDescription = 'A field service technician is a general term for any repair or assessment technician who travels to a site to troubleshoot equipment problems. A field service technician may work for a product manufacturer or be employed by a dedicated team of repairmen, such as Best Buy''s Geek Squad, whose job is to repair and maintain all makes and models of a particular type of product.',
 OccupationImageURL = '../Content/images/occupation/technicalfield.jpg'
 WHERE Occupation = 'Technical';
 

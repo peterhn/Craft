@@ -116,9 +116,13 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Key>
             <PropertyRef Name="Occupation" />
             <PropertyRef Name="PersonalityType" />
+            <PropertyRef Name="OccupationDescription" />
+            <PropertyRef Name="OccupationImageURL" />
           </Key>
           <Property Name="Occupation" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PersonalityType" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="OccupationDescription" Type="nvarchar" MaxLength="800" Nullable="false" />
+          <Property Name="OccupationImageURL" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Personalities">
           <Key>
@@ -378,7 +382,9 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <EntitySet Name="OccupationalTrends" EntityType="Self.OccupationalTrends" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [OccupationalTrends].[Occupation] AS [Occupation], 
-    [OccupationalTrends].[PersonalityType] AS [PersonalityType]
+    [OccupationalTrends].[PersonalityType] AS [PersonalityType], 
+    [OccupationalTrends].[OccupationDescription] AS [OccupationDescription], 
+    [OccupationalTrends].[OccupationImageURL] AS [OccupationImageURL]
     FROM [dbo].[OccupationalTrends] AS [OccupationalTrends]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
@@ -683,10 +689,14 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Key>
             <PropertyRef Name="Occupation" />
             <PropertyRef Name="PersonalityType" />
+            <PropertyRef Name="OccupationDescription" />
+            <PropertyRef Name="OccupationImageURL" />
           </Key>
           <Property Name="Occupation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PersonalityType" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Personality" Relationship="Model.FK_OccupationalTrends_Personalities" FromRole="OccupationalTrend" ToRole="Personality" />
+          <Property Name="OccupationDescription" Type="String" Nullable="false" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="OccupationImageURL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="MembershipApplication">
           <End Type="Model.Application" Role="Application" Multiplicity="1" />
@@ -991,6 +1001,8 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <EntitySetMapping Name="OccupationalTrends">
             <EntityTypeMapping TypeName="Model.OccupationalTrend">
               <MappingFragment StoreEntitySet="OccupationalTrends">
+                <ScalarProperty Name="OccupationImageURL" ColumnName="OccupationImageURL" />
+                <ScalarProperty Name="OccupationDescription" ColumnName="OccupationDescription" />
                 <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
                 <ScalarProperty Name="Occupation" ColumnName="Occupation" />
               </MappingFragment>
