@@ -5,31 +5,31 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="21ed6358ac4a4970b1d56afabfcd1b61" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.Application" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Membership" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Personality" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Profile" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
-        <AssociationConnector Association="Model.MembershipApplication" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.RoleApplication" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.UserApplication" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.MembershipUser" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.UserProfile" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.UsersInRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="7.375" PointY="9.75" />
-        <EntityTypeShape EntityType="Model.AspNetRole" Width="1.5" PointX="7.375" PointY="2.5" />
-        <EntityTypeShape EntityType="Model.AspNetUserClaim" Width="1.5" PointX="11.875" PointY="3.625" />
-        <EntityTypeShape EntityType="Model.AspNetUserLogin" Width="1.5" PointX="11.875" PointY="1" />
-        <EntityTypeShape EntityType="Model.AspNetUser" Width="1.5" PointX="9.625" PointY="1.125" />
-        <EntityTypeShape EntityType="Model.MBTITest" Width="1.5" PointX="5.375" PointY="0.875" />
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Application" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.AspNetRole" Width="1.5" PointX="5.75" PointY="2.5" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.AspNetUser" Width="1.5" PointX="8" PointY="1.125" />
+        <EntityTypeShape EntityType="Model.MBTITest" Width="1.5" PointX="3" PointY="14.125" />
+        <EntityTypeShape EntityType="Model.Membership" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="Model.Personality" Width="1.5" PointX="9.75" PointY="6.875" />
+        <EntityTypeShape EntityType="Model.Profile" Width="1.5" PointX="7.5" PointY="8.125" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="3" PointY="11.125" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="Model.OccupationalTrend" Width="1.5" PointX="12" PointY="7" />
+        <AssociationConnector Association="Model.MembershipApplication" />
+        <AssociationConnector Association="Model.RoleApplication" />
+        <AssociationConnector Association="Model.UserApplication" />
         <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="Model.FK_MBTITest_MBTITest" />
         <AssociationConnector Association="Model.FK_Users_MBTITest" />
-        <AssociationConnector Association="Model.AspNetUserRoles" />
-        <EntityTypeShape EntityType="Model.OccupationalTrend" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="Model.MembershipUser" />
         <AssociationConnector Association="Model.FK_OccupationalTrends_Personalities" />
+        <AssociationConnector Association="Model.UserProfile" />
+        <AssociationConnector Association="Model.AspNetUserRoles" />
+        <AssociationConnector Association="Model.UsersInRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

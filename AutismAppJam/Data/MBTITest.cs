@@ -23,8 +23,8 @@ namespace AutismAppJam.Data
         public string Responses { get; set; }
         public bool Completed { get; set; }
     
+        public virtual MBTITest MBTITests1 { get; set; }
         public virtual MBTITest MBTITest1 { get; set; }
-        public virtual MBTITest MBTITest2 { get; set; }
         public virtual ICollection<User> Users { get; set; }
     }
 }
