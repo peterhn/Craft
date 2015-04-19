@@ -9,8 +9,8 @@ namespace AutismAppJam.Models
 {
     public class DashboardModel
     {
-        public ApplicationUser User { get; set; }
-        public MBTITest MBTITest { get; set; }
+        public User User { get; set; }
+        public Personality Personality { get; set; }
         public List<OccupationalTrend> OccupationalTrends { get; set; }
     }
 }

@@ -71,5 +71,22 @@ namespace AutismAppJam.Repositories
                 return null;
             }
         }
+
+        public bool UpdateUserPersonalityType(string userId, Personality personality)
+        {
+            try
+            {
+                using(var db = Data.DatabaseContext.GetDbConnection())
+                {
+                    db.Execute(string.Format("UPDATE Users SET PersonalityType = '{0}' WHERE UserId = '{1}'", userId, personality.PersonalityType));
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

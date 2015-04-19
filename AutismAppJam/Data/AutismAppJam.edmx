@@ -161,6 +161,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Property Name="MBTITestId" Type="uniqueidentifier" />
           <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="DateOfBirth" Type="date" />
+          <Property Name="PersonalityType" Type="nvarchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="UsersInRoles">
           <Key>
@@ -259,6 +260,18 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
             </Principal>
             <Dependent Role="Users">
               <PropertyRef Name="MBTITestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Personalities">
+          <End Role="Personalities" Type="Self.Personalities" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personalities">
+              <PropertyRef Name="PersonalityType" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="PersonalityType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -395,6 +408,10 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
             <End Role="MBTITests" EntitySet="MBTITests" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <AssociationSet Name="FK_Users_Personalities" Association="Self.FK_Users_Personalities">
+            <End Role="Personalities" EntitySet="Personalities" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
           <AssociationSet Name="MembershipApplication" Association="Self.MembershipApplication">
             <End Role="Applications" EntitySet="Applications" />
             <End Role="Memberships" EntitySet="Memberships" />
@@ -488,6 +505,10 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           </AssociationSet>
           <AssociationSet Name="UsersInRoles" Association="Model.UsersInRoles">
             <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Personalities" Association="Model.FK_Users_Personalities">
+            <End Role="Personality" EntitySet="Personalities" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
@@ -610,6 +631,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Property Name="PersonalityName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PersonalityDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="OccupationalTrends" Relationship="Model.FK_OccupationalTrends_Personalities" FromRole="Personality" ToRole="OccupationalTrend" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_Users_Personalities" FromRole="Personality" ToRole="User" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -652,6 +674,8 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <NavigationProperty Name="Membership" Relationship="Model.MembershipUser" FromRole="User" ToRole="Membership" />
           <NavigationProperty Name="Profile" Relationship="Model.UserProfile" FromRole="User" ToRole="Profile" />
           <NavigationProperty Name="Roles" Relationship="Model.UsersInRoles" FromRole="User" ToRole="Role" />
+          <Property Name="PersonalityType" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Personality" Relationship="Model.FK_Users_Personalities" FromRole="User" ToRole="Personality" />
         </EntityType>
         <EntityType Name="OccupationalTrend">
           <Key>
@@ -794,6 +818,18 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <End Type="Model.Role" Role="Role" Multiplicity="*" />
           <End Type="Model.User" Role="User" Multiplicity="*" />
         </Association>
+        <Association Name="FK_Users_Personalities">
+          <End Type="Model.Personality" Role="Personality" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personality">
+              <PropertyRef Name="PersonalityType" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="PersonalityType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -935,6 +971,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
                 <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="MBTITestId" ColumnName="MBTITestId" />

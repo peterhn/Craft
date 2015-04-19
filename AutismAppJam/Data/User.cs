@@ -29,11 +29,13 @@ namespace AutismAppJam.Data
         public Nullable<System.Guid> MBTITestId { get; set; }
         public string Email { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public string PersonalityType { get; set; }
     
         public virtual Application Application { get; set; }
         public virtual MBTITest MBTITest { get; set; }
         public virtual Membership Membership { get; set; }
         public virtual Profile Profile { get; set; }
         public virtual ICollection<Role> Roles { get; set; }
+        public virtual Personality Personality { get; set; }
     }
 }

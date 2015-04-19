@@ -16,10 +16,17 @@ namespace AutismAppJam.Repositories
     {
         public Personality GetPersonality(string type)
         {
-            using (var db = Data.DatabaseContext.GetDbConnection())
+            try
             {
-                List<Personality> personalities = (List<Personality>)db.Query<Personality>("SELECT* FROM Personalities WHERE PersonalityType = '"+ type + "'");
-                return personalities.First();
+                using (var db = Data.DatabaseContext.GetDbConnection())
+                {
+                    List<Personality> personalities = (List<Personality>)db.Query<Personality>("SELECT* FROM Personalities WHERE PersonalityType = '" + type + "'");
+                    return personalities.First();
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
             }
         }
     }

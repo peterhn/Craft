@@ -11,11 +11,11 @@ namespace AutismAppJam.Repositories
 {
     public class OccupationalTrendsRepository
     {
-        public List<OccupationalTrend> GetOccupationalTrend(string personalityType)
+        public List<OccupationalTrend> GetOccupationalTrendsByPersonalityType(string personalityType)
         {
             using (var db = Data.DatabaseContext.GetDbConnection())
             {
-                var occupationalTrends = (List<OccupationalTrend>)db.Query<OccupationalTrend>("SELECT * FROM OccupationalTrend where PersonalityType = '" + personalityType + "'");
+                var occupationalTrends = (List<OccupationalTrend>)db.Query<OccupationalTrend>("SELECT * FROM OccupationalTrends where PersonalityType = '" + personalityType + "'");
                 return occupationalTrends;
             }
         }

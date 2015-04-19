@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using AutismAppJam.Data;
 using System.Security.Claims;
 using AutismAppJam.Repositories;
+using AutismAppJam.Models;
 
 namespace AutismAppJam.Controllers
 {
@@ -18,13 +19,22 @@ namespace AutismAppJam.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            String userId = User.Identity.GetUserId();
+            string userId = User.Identity.GetUserId();
             
             var userRepository = new UserRepository();
+            var personalityRepository = new PersonalityRepository();
+            var occupationalTrendsRepository = new OccupationalTrendsRepository();
 
             var user = userRepository.GetUserById(userId);
+            var personality = personalityRepository.GetPersonality(user.PersonalityType);
+            var occupationalTrends = occupationalTrendsRepository.GetOccupationalTrendsByPersonalityType(user.PersonalityType);
+            
+            DashboardModel dashboardModel = new DashboardModel();
+            dashboardModel.User = user;
+            dashboardModel.Personality = personality;
+            dashboardModel.OccupationalTrends = occupationalTrends;
 
-            return View(user);
+            return View(dashboardModel);
         }
 
     }

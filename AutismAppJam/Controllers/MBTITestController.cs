@@ -6,6 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using Microsoft.AspNet.Identity;
+using System.Security.Claims;
+
 namespace AutismAppJam.Controllers
 {
     public class MBTITestController : Controller
@@ -87,7 +90,10 @@ namespace AutismAppJam.Controllers
             PersonalityRepository pr = new PersonalityRepository();
             Personality personality = pr.GetPersonality(resultType);
 
-            return View(personality);
+            var userRepository = new UserRepository();
+            userRepository.UpdateUserPersonalityType(User.Identity.GetUserId(), personality);
+
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 }

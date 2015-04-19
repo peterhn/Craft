@@ -30,6 +30,7 @@
         <AssociationConnector Association="Model.UserProfile" />
         <AssociationConnector Association="Model.AspNetUserRoles" />
         <AssociationConnector Association="Model.UsersInRoles" />
+        <AssociationConnector Association="Model.FK_Users_Personalities" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

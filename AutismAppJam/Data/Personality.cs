@@ -17,6 +17,7 @@ namespace AutismAppJam.Data
         public Personality()
         {
             this.OccupationalTrends = new HashSet<OccupationalTrend>();
+            this.Users = new HashSet<User>();
         }
     
         public string PersonalityType { get; set; }
@@ -24,5 +25,6 @@ namespace AutismAppJam.Data
         public string PersonalityDescription { get; set; }
     
         public virtual ICollection<OccupationalTrend> OccupationalTrends { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }
