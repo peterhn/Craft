@@ -37,7 +37,7 @@ namespace AutismAppJam.Repositories
             {
                 using (var db = Data.DatabaseContext.GetDbConnection())
                 {
-                    var users = (List<User>)db.Query<User>("SELECT * FROM Users WHERE Username = '" + username + "");
+                    var users = (List<User>)db.Query<User>("SELECT * FROM Users WHERE Username = '" + username + "'");
                     var user = users[0];
 
                     var applicationUser = new ApplicationUser();
