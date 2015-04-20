@@ -159,6 +159,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\InterviewController.cs" />
     <Compile Include="Controllers\MBTITestController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Data\AspNetRole.cs">
       <DependentUpon>AutismAppJam.tt</DependentUpon>
     </Compile>
@@ -454,6 +455,7 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\MBTITest\Index.cshtml" />
     <Content Include="Views\Interview\Index.cshtml" />
+    <Content Include="Views\Videos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

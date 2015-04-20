@@ -62,7 +62,8 @@
 
                 }
                 <button type="button" class="buttonstyle btn btn-default active">Profile</button>
-                <button type="button" class="buttonstyle btn btn-default">Video Archive</button>
+                @*<button type="button" class="buttonstyle btn btn-default">Video Archive</button>*@
+                @Html.ActionLink("Video Archive", "Index", "Videos", null, new { @class = "btn btn-default buttonstyle" })
                 @Html.ActionLink("Interview Prep", "Index", "Interview", null, new { @class = "btn btn-default buttonstyle" })
                 <button type="button" class="buttonstyle btn btn-default">Career Stories</button>
 
