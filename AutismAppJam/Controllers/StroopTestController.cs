@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace AutismAppJam.Controllers
 {
+
     [Authorize]
     public class StroopTestController : Controller
     {
