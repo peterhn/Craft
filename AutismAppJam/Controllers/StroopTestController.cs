@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.Mvc;
 
 namespace AutismAppJam.Controllers
 {
+
+    [Authorize]
     public class StroopTestController : Controller
     {
         public ActionResult Index()
@@ -15,6 +16,7 @@ namespace AutismAppJam.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Index(List<string> questions)
         {
 
