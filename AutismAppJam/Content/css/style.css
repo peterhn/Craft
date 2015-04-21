@@ -716,3 +716,13 @@ textarea {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
+
+.stroop_test input[type="radio"] {
+  margin-bottom: 2em;
+  margin-left:2em;
+}
+
+.stroop_test {
+    width: 30%;
+    margin: 0 auto;
+}
