@@ -126,6 +126,16 @@
                                     </div>
                                 }
                             </div>
+
+                            @if(Model.User.AttentionSpanId == null)
+                            {
+                                <div class="row">
+                                    <div class="text-center">
+                                        @Html.ActionLink("Take next assesment", "Index", "StroopTest", null, new { @class = "btn btn-primary" })
+                                    </div>
+                                </div>
+                            }
+
                         </div>
                     </div>
                 }

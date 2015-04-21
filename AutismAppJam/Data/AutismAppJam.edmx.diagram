@@ -31,6 +31,8 @@
         <AssociationConnector Association="Model.AspNetUserRoles" />
         <AssociationConnector Association="Model.UsersInRoles" />
         <AssociationConnector Association="Model.FK_Users_Personalities" />
+        <EntityTypeShape EntityType="Model.AttentionSpan" Width="1.5" PointX="10.375" PointY="10.875" />
+        <AssociationConnector Association="Model.FK_Users_AttentionSpans" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

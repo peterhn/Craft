@@ -12,19 +12,16 @@ namespace AutismAppJam.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Role
+    public partial class AttentionSpan
     {
-        public Role()
+        public AttentionSpan()
         {
             this.Users = new HashSet<User>();
         }
     
-        public System.Guid ApplicationId { get; set; }
-        public System.Guid RoleId { get; set; }
-        public string RoleName { get; set; }
-        public string Description { get; set; }
+        public int AttentionSpanId { get; set; }
+        public string AttentionSpanName { get; set; }
     
-        public virtual Application Application { get; set; }
         public virtual ICollection<User> Users { get; set; }
     }
 }

@@ -77,6 +77,13 @@
           <Property Name="AccessFailedCount" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
+        <EntityType Name="AttentionSpans">
+          <Key>
+            <PropertyRef Name="AttentionSpanId" />
+          </Key>
+          <Property Name="AttentionSpanId" Type="int" Nullable="false" />
+          <Property Name="AttentionSpanName" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="MBTITests">
           <Key>
             <PropertyRef Name="MbtiTestId" />
@@ -167,6 +174,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="DateOfBirth" Type="date" />
           <Property Name="PersonalityType" Type="nvarchar" MaxLength="4" />
+          <Property Name="AttentionSpanId" Type="int" />
         </EntityType>
         <EntityType Name="UsersInRoles">
           <Key>
@@ -253,6 +261,18 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
             </Principal>
             <Dependent Role="OccupationalTrends">
               <PropertyRef Name="PersonalityType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_AttentionSpans">
+          <End Role="AttentionSpans" Type="Self.AttentionSpans" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AttentionSpans">
+              <PropertyRef Name="AttentionSpanId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="AttentionSpanId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -372,6 +392,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AttentionSpans" EntityType="Self.AttentionSpans" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MBTITests" EntityType="Self.MBTITests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Memberships" EntityType="Self.Memberships" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personalities" EntityType="Self.Personalities" Schema="dbo" store:Type="Tables" />
@@ -410,6 +431,10 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <AssociationSet Name="FK_OccupationalTrends_Personalities" Association="Self.FK_OccupationalTrends_Personalities">
             <End Role="Personalities" EntitySet="Personalities" />
             <End Role="OccupationalTrends" EntitySet="OccupationalTrends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_AttentionSpans" Association="Self.FK_Users_AttentionSpans">
+            <End Role="AttentionSpans" EntitySet="AttentionSpans" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_MBTITest" Association="Self.FK_Users_MBTITest">
             <End Role="MBTITests" EntitySet="MBTITests" />
@@ -516,6 +541,11 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           </AssociationSet>
           <AssociationSet Name="FK_Users_Personalities" Association="Model.FK_Users_Personalities">
             <End Role="Personality" EntitySet="Personalities" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="AttentionSpans" EntityType="Model.AttentionSpan" />
+          <AssociationSet Name="FK_Users_AttentionSpans" Association="Model.FK_Users_AttentionSpans">
+            <End Role="AttentionSpan" EntitySet="AttentionSpans" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
@@ -684,6 +714,8 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <NavigationProperty Name="Roles" Relationship="Model.UsersInRoles" FromRole="User" ToRole="Role" />
           <Property Name="PersonalityType" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Personality" Relationship="Model.FK_Users_Personalities" FromRole="User" ToRole="Personality" />
+          <Property Name="AttentionSpanId" Type="Int32" />
+          <NavigationProperty Name="AttentionSpan" Relationship="Model.FK_Users_AttentionSpans" FromRole="User" ToRole="AttentionSpan" />
         </EntityType>
         <EntityType Name="OccupationalTrend">
           <Key>
@@ -842,6 +874,26 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="AttentionSpan">
+          <Key>
+            <PropertyRef Name="AttentionSpanId" />
+          </Key>
+          <Property Name="AttentionSpanId" Type="Int32" Nullable="false" />
+          <Property Name="AttentionSpanName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_Users_AttentionSpans" FromRole="AttentionSpan" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Users_AttentionSpans">
+          <End Type="Model.AttentionSpan" Role="AttentionSpan" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AttentionSpan">
+              <PropertyRef Name="AttentionSpanId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AttentionSpanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -984,6 +1036,7 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="AttentionSpanId" ColumnName="AttentionSpanId" />
                 <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
                 <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -1024,6 +1077,14 @@ warning 6002: The table/view 'Craft.dbo.OccupationalTrends' does not have a prim
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="AttentionSpans">
+            <EntityTypeMapping TypeName="Model.AttentionSpan">
+              <MappingFragment StoreEntitySet="AttentionSpans">
+                <ScalarProperty Name="AttentionSpanName" ColumnName="AttentionSpanName" />
+                <ScalarProperty Name="AttentionSpanId" ColumnName="AttentionSpanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
