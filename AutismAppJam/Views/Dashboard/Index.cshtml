@@ -3,77 +3,12 @@
 @{
     ViewBag.Title = "Dashboard";
 }
-
-<style>
-    .body {
-        margin-top: 6em;
-    }
-
-    .buttonstyle {
-        margin: 1em;
-    }
-
-    .centerJumbo {
-        text-align: center;
-        background-color: #FFFFFF;
-    }
-
-    .type {
-        margin: 0;
-    }
-
-    .subtype {
-        margin-top: 17px;
-    }
-
-    .description {
-        margin-top: 22px;
-    }
-
-    .occupationalTitle {
-        font-size: 12px;
-        font-weight: bold;
-    }
-
-    .occupational {
-        font-size: 12px;
-    }
-
-    .occupationalImage {
-        max-height: 50%;
-        max-width: 50%;
-    }
-</style>
+<link href="@Url.Content("~/Content/css/sidebarstyle.css")" type="text/css" rel="stylesheet" />
 
 <div>
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="col-lg-2">
-                <h2>@Model.User.UserName</h2>
-                <!--Sidebar content-->
-                @if (Model.User.PersonalityType == null)
-                {
-                    <img src="../Content/images/defaultProfile.jpg" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
-                    <button type="button" class="buttonstyle btn btn-default active">Profile</button>
-                }
-                else if(Model.User.AttentionSpanId != null)
-                {
-                    <img src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
-                    <button type="button" class="buttonstyle btn btn-default active">Profile</button>
-                    @*<button type="button" class="buttonstyle btn btn-default">Video Archive</button>*@
-                    @Html.ActionLink("Video Archive", "Index", "Videos", null, new { @class = "btn btn-default buttonstyle" })
-                    @Html.ActionLink("Interview Prep", "Index", "Interview", null, new { @class = "btn btn-default buttonstyle" })
-                    @*<button type="button" class="buttonstyle btn btn-default">Career Stories</button>*@
-
-                }
-                else
-                {
-                    <img src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
-                    <button type="button" class="buttonstyle btn btn-default active">Profile</button>
-                }
-
-
-            </div>
+            @Html.Partial("_PartialSideBar")
             <div class="col-lg-10">
                 <br />
                 <br />
