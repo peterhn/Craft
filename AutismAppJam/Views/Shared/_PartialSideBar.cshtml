@@ -1,0 +1,26 @@
+﻿<div class="col-lg-2 text-center">
+    <h2>@Model.User.UserName</h2>
+    <!--Sidebar content-->
+    @if (Model.User.PersonalityType == null)
+    {
+        <img src="../Content/images/defaultProfile.jpg" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
+        <button type="button" class="buttonstyle btn btn-default active">Profile</button>
+    }
+    else if (Model.User.AttentionSpanId != null)
+    {
+        <img height="139" width="139" src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
+        @Html.ActionLink("Profile", "Index", "Dashboard", null, new { @class = "btn btn-default buttonstyle" })
+        @*<button type="button" class="buttonstyle btn btn-default">Video Archive</button>*@
+        @Html.ActionLink("Video Archive", "Index", "Videos", null, new { @class = "btn btn-default buttonstyle" })
+        @Html.ActionLink("Interview Prep", "Index", "Interview", null, new { @class = "btn btn-default buttonstyle" })
+        @*<button type="button" class="buttonstyle btn btn-default">Career Stories</button>*@
+
+    }
+    else
+    {
+        <img src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
+        <button type="button" class="buttonstyle btn btn-default active">Profile</button>
+    }
+
+
+</div>

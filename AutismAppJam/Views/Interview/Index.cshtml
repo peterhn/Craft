@@ -1,382 +1,391 @@
 ﻿@{
     ViewBag.Title = "Interview Videos";
 }
+<link href="@Url.Content("~/Content/css/sidebarstyle.css")" type="text/css" rel="stylesheet" />
 
-<div class="section">
-    <div class="container">
-        <h1 class="text-center title" id="portfolio">Interview Prep</h1>
-        <div class="separator"></div>
-        <p class="lead text-center">Useful tips on how to handle interviews!</p>
-        <br>
-        <div class="row object-non-visible" data-animation-effect="fadeIn">
-            <div class="col-md-12">
-                <!-- isotope filters start -->
-                <div class="filters text-center">
-                    <ul class="nav nav-pills">
-                        <li class="active"><a href="#" data-filter="*">All</a></li>
-                        <li><a href="#" data-filter=".before-the-interview">Before the Interview</a></li>
-                        <li><a href="#" data-filter=".during-the-interview">Day of the Interview</a></li>
-                        <li><a href="#" data-filter=".after-the-interview">After the Interview</a></li>
-                    </ul>
+<div class="container-fluid">
+    <div class="row-fluid">
+        @Html.Partial("_PartialSideBar")
+        <div class="col-lg-10">
+            <div class="section">
+                <div class="container">
+                    <h1 class="text-center title" id="portfolio">Interview Prep</h1>
+                    <div class="separator"></div>
+                    <p class="lead text-center">Useful tips on how to handle interviews!</p>
+                    <br>
+                    <div class="row object-non-visible" data-animation-effect="fadeIn">
+                        <div class="col-md-12">
+                            <!-- isotope filters start -->
+                            <div class="filters text-center">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a href="#" data-filter="*">All</a></li>
+                                    <li><a href="#" data-filter=".before-the-interview">Before the Interview</a></li>
+                                    <li><a href="#" data-filter=".during-the-interview">Day of the Interview</a></li>
+                                    <li><a href="#" data-filter=".after-the-interview">After the Interview</a></li>
+                                </ul>
+                            </div>
+                            <!-- isotope filters end -->
+                            <!-- portfolio items start -->
+                            <div class="isotope-container row grid-space-20">
+                                <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-1">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>Before the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">Preparing Documents</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-1-label">Preparing Documents</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Prepare Documents before-hand to help you get organized and ready for the big day!</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>■ Make sure your resume is up-to-date and print out two clean copies with no wrinkles.</p>
+                                                            <p>■ Print a copy of at least two of your references listed with all of their contact information.</p>
+                                                            <p>■ Prepare a list of important information (your phone number, address, social security #, etc.) to help you fill out the job application, if needed.</p>
+                                                            <p>■ Make sure you have a form of photo identification (like a driver’s license) or state issued I.D. </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/prepare_documents_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-2">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>Before the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">Review the Job Position</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-2-label">Review the Job Position</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Review the job position and company to help get a better understanding of what the employer is looking for!</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>■ Review the job description or the “Help Wanted” description.</p>
+                                                            <p>■ Research information about the company including their “mission” or goal. (Read over their website or Google them!)</p>
+                                                            <p>■ Make a list of 2-3 questions you may have about the position.</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/review_position_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-3">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>Before the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3">Practice Interviewing</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-3-label">Practice Interviewing</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Practice Interviewing to help yourself get more comfortable with the interviewing process and to get valuable feedback. Practice makes perfect! </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>■ Practice your interview with someone you trust.</p>
+                                                            <p>■ Rehearse your respones outloud.</p>
+                                                            <p>■ Make sure to practice your tone of voice, eye contact, and facial expressions as well!</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/practice_interview_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-4">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>Before the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4">Organize your Belongings</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-4-label">Organize your Belongings</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Organize your belongings aheaad of time so you can be prepared on your interview day!</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>■ Put all of your materials in a professional-looking folder, briefcase, day planner, or handbag.</p>
+                                                            <p>■ Have a clean, professional outfit ready to wear!</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/organize_documents_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item during-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-5">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>During the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5">Dress for Success</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-5-label">Dress for Success</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Dress for Success! Look good and feel good! </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>■ No matter what kind of job you hope to get, it is very important to look neat, clean, and professional. That means clean, wrinkle-free (ironed) clothes that fit appropriately, and matching belt, shoes and socks</p>
+                                                            <p>■ Dress appropriately depending on the type of job position whether it be formal or more informal. Also keep in mind that being over-dressed is being under-dressed.</p>
+                                                            <p>
+                                                                ■ Groom yourself! Be sure that you are showered/bathed, your teeth are brushed, hair is neat and
+                                                                combed, fingernails are neatly trimmed, you have put on deodorant, and for men, that you have
+                                                                shaved on the day of the interview.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/dress_for_success_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item during-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-6">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>During the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6">Interview Etiquette</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-6-label">Interview Etiquette</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Interview etiquette tips to leave good impressions on your interviewer!</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>
+                                                                ■ Plan to arrive at the interview location at least 15-30 minutes early. This will make a good first impression
+                                                                and ensures that you are not late. You can wait outside or in the waiting area if you are too early.
+                                                            </p>
+                                                            <p>
+                                                                ■ Be polite and friendly to any staff you come into contact with. You might need to tell an employee that
+                                                                you are there for an interview so that your interviewer knows you have arrived.
+                                                            </p>
+                                                            <p>
+                                                                ■ Be ready to begin with a greeting, a smile and a handshake. Reach out your hand
+                                                                and smile when you first enter the office, looking the interviewer in the eyes as you
+                                                                introduce yourself.Your handshake should be firm – not too hard, but not limp. Practice this with a friend
+                                                                before the interview.
+                                                            </p>
+                                                            <p>
+                                                                ■ Be sure to smile occasionally, sit up straight in your chair and face the interviewer, try your best to sit still as you talk, and use an upbeat tone of voice if you can.
+                                                            </p>
+                                                            <p>
+                                                                ■ Answer each question politely, even though the information may already be in your resume or application and be sure to thank the interviewer for their time and consideration
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/interview_etiquette_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item after-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-7">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>After the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7">Thank your Interviewer</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-7-label">Thank your Interviewer</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Thank your interviewer to show that you appreciate the time they took to consider you for the position!</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>
+                                                                ■ Within two days after your interview, you should always write a thank you letter or email to your interviewer
+                                                                for meeting with you.
+                                                            </p>
+                                                            <p>■ Show appreciation for the employer's interest in you. </p>
+                                                            <p>■ Reiterate your interest in the position and in the organization.</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/thank_interviewer_2_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+
+                                <div class="col-sm-6 col-md-3 isotope-item after-the-interview">
+                                    <div class="image-box">
+                                        <div class="overlay-container">
+                                            <img src="" alt="">
+                                            <a class="overlay" data-toggle="modal" data-target="#project-8">
+                                                <i class="fa fa-search-plus"></i>
+                                                <span>After the Interview</span>
+                                            </a>
+                                        </div>
+                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-8">Patiently Wait</a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="project-8" tabindex="-1" role="dialog" aria-labelledby="project-8-label" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="project-8-label">Patiently Wait</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Patiently wait to hear results. Good luck!</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p>■ Now is time for you to wait. You must wait to hear whether or not you got the job. This can be hard! </p>
+                                                            <p>■ If more than a week has passed beyond the date when you were told you would hear something from the employer, call or e-mail to politely inquire about the status of the organization's decision-making process.</p>
+                                                            <p>■ A polite inquiry shows that you are still interested in the organization and may prompt the employer to get on schedule with a response. In your inquiry, mention the following: name of the person who interviewed you, time and place of the interview, position for which you are applying (if known), and ask the status of your application.</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <img src="../Content/images/interview prep/patiently_waiting_raw.jpg" alt="" class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal end -->
+                                </div>
+                            </div>
+                            <!-- portfolio items end -->
+
+                        </div>
+                    </div>
                 </div>
-                <!-- isotope filters end -->
-                <!-- portfolio items start -->
-                <div class="isotope-container row grid-space-20">
-                    <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-1">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>Before the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">Preparing Documents</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-1-label">Preparing Documents</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Prepare Documents before-hand to help you get organized and ready for the big day!</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>■ Make sure your resume is up-to-date and print out two clean copies with no wrinkles.</p>
-                                                <p>■ Print a copy of at least two of your references listed with all of their contact information.</p>
-                                                <p>■ Prepare a list of important information (your phone number, address, social security #, etc.) to help you fill out the job application, if needed.</p>
-                                                <p>■ Make sure you have a form of photo identification (like a driver’s license) or state issued I.D. </p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/prepare_documents_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-2">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>Before the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">Review the Job Position</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-2-label">Review the Job Position</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Review the job position and company to help get a better understanding of what the employer is looking for!</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>■ Review the job description or the “Help Wanted” description.</p>
-                                                <p>■ Research information about the company including their “mission” or goal. (Read over their website or Google them!)</p>
-                                                <p>■ Make a list of 2-3 questions you may have about the position.</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/review_position_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-3">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>Before the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3">Practice Interviewing</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-3-label">Practice Interviewing</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Practice Interviewing to help yourself get more comfortable with the interviewing process and to get valuable feedback. Practice makes perfect! </h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>■ Practice your interview with someone you trust.</p>
-                                                <p>■ Rehearse your respones outloud.</p>
-                                                <p>■ Make sure to practice your tone of voice, eye contact, and facial expressions as well!</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/practice_interview_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item before-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-4">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>Before the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4">Organize your Belongings</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-4-label">Organize your Belongings</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Organize your belongings aheaad of time so you can be prepared on your interview day!</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>■ Put all of your materials in a professional-looking folder, briefcase, day planner, or handbag.</p>
-                                                <p>■ Have a clean, professional outfit ready to wear!</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/organize_documents_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item during-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-5">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>During the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5">Dress for Success</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-5-label">Dress for Success</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Dress for Success! Look good and feel good! </h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>■ No matter what kind of job you hope to get, it is very important to look neat, clean, and professional. That means clean, wrinkle-free (ironed) clothes that fit appropriately, and matching belt, shoes and socks</p>
-                                                <p>■ Dress appropriately depending on the type of job position whether it be formal or more informal. Also keep in mind that being over-dressed is being under-dressed.</p>
-                                                <p>
-                                                    ■ Groom yourself! Be sure that you are showered/bathed, your teeth are brushed, hair is neat and
-                                                    combed, fingernails are neatly trimmed, you have put on deodorant, and for men, that you have
-                                                    shaved on the day of the interview.
-                                                </p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/dress_for_success_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item during-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-6">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>During the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6">Interview Etiquette</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-6-label">Interview Etiquette</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Interview etiquette tips to leave good impressions on your interviewer!</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>
-                                                    ■ Plan to arrive at the interview location at least 15-30 minutes early. This will make a good first impression
-                                                    and ensures that you are not late. You can wait outside or in the waiting area if you are too early.
-                                                </p>
-                                                <p>
-                                                    ■ Be polite and friendly to any staff you come into contact with. You might need to tell an employee that
-                                                    you are there for an interview so that your interviewer knows you have arrived.
-                                                </p>
-                                                <p>
-                                                    ■ Be ready to begin with a greeting, a smile and a handshake. Reach out your hand
-                                                    and smile when you first enter the office, looking the interviewer in the eyes as you
-                                                    introduce yourself.Your handshake should be firm – not too hard, but not limp. Practice this with a friend
-                                                    before the interview.
-                                                </p>
-                                                <p>
-                                                    ■ Be sure to smile occasionally, sit up straight in your chair and face the interviewer, try your best to sit still as you talk, and use an upbeat tone of voice if you can.
-                                                </p>
-                                                <p>
-                                                    ■ Answer each question politely, even though the information may already be in your resume or application and be sure to thank the interviewer for their time and consideration
-                                                </p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/interview_etiquette_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item after-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-7">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>After the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7">Thank your Interviewer</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-7-label">Thank your Interviewer</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Thank your interviewer to show that you appreciate the time they took to consider you for the position!</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>
-                                                    ■ Within two days after your interview, you should always write a thank you letter or email to your interviewer
-                                                    for meeting with you.
-                                                </p>
-                                                <p>■ Show appreciation for the employer's interest in you. </p>
-                                                <p>■ Reiterate your interest in the position and in the organization.</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/thank_interviewer_2_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 isotope-item after-the-interview">
-                        <div class="image-box">
-                            <div class="overlay-container">
-                                <img src="" alt="">
-                                <a class="overlay" data-toggle="modal" data-target="#project-8">
-                                    <i class="fa fa-search-plus"></i>
-                                    <span>After the Interview</span>
-                                </a>
-                            </div>
-                            <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-8">Patiently Wait</a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="project-8" tabindex="-1" role="dialog" aria-labelledby="project-8-label" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="project-8-label">Patiently Wait</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Patiently wait to hear results. Good luck!</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>■ Now is time for you to wait. You must wait to hear whether or not you got the job. This can be hard! </p>
-                                                <p>■ If more than a week has passed beyond the date when you were told you would hear something from the employer, call or e-mail to politely inquire about the status of the organization's decision-making process.</p>
-                                                <p>■ A polite inquiry shows that you are still interested in the organization and may prompt the employer to get on schedule with a response. In your inquiry, mention the following: name of the person who interviewed you, time and place of the interview, position for which you are applying (if known), and ask the status of your application.</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="../Content/images/interview prep/patiently_waiting_raw.jpg" alt="" class="img-responsive center-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal end -->
-                    </div>
-                </div>
-                <!-- portfolio items end -->
-
             </div>
         </div>
+        
     </div>
 </div>
