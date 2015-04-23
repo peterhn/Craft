@@ -17,7 +17,7 @@ namespace AutismAppJam.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(List<string> questions)
+        public ActionResult Index(List<string> questions, int testDuration)
         {
 
 

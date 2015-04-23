@@ -1,4 +1,9 @@
 
+$(window).load(function () {
+        $('#stroopDescription').modal('show');
+    });
+
+
 $(document).ready(function() {
 
 	$("#stroop_question_2, #stroop_question_3, #stroop_question_4, #stroop_question_5, #stroop_question_6, #stroop_question_7, #stroop_question_8, #stroop_question_9, #stroop_question_10, #stroop_question_11, #stroop_question_12, #stroop_question_13, #stroop_question_14, #stroop_question_15, #stroop_question_16, #stroop_question_17, #stroop_question_18, #stroop_question_19, #stroop_question_20").hide();

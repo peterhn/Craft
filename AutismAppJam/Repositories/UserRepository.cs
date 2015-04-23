@@ -89,5 +89,23 @@ namespace AutismAppJam.Repositories
                 return false;
             }
         }
+
+        public bool UpdateUserAttentionSpan(string userId, AttentionSpan attentionSpan)
+        {
+            try
+            {
+                using (var db = Data.DatabaseContext.GetDbConnection())
+                {
+                    string query = string.Format("UPDATE Users SET AttentionSpan = '{0}' WHERE UserId = '{1}'", attentionSpan.AttentionSpanId , userId);
+                    db.Execute(query);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
