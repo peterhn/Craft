@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="shortcut icon" href="images/logos/craft-logo.png">
     <link href="@Url.Content("~/Content/bootstrap/css/bootstrap.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/fonts/font-awesome/css/font-awesome.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/animations.css")" rel="stylesheet"/>
@@ -28,16 +28,17 @@
                     <!-- ================ -->
                     <div class="header-left clearfix">
 
-                        <!-- logo -->
-                        <div class="logo smooth-scroll">
-                            <a href="/">
-                                <img id="logo" width="37px" height="44px" src="@Url.Content("~/Content/images/logo.png")" alt="autism">
-                            </a>
-                        </div>
+                        
 
                         <!-- name-and-slogan -->
                         <div class="site-name-and-slogan smooth-scroll">
-                            <div class="site-name">@Html.ActionLink("Craft", "Index", "Home")</div>
+                            <!-- logo -->
+                            <div class="site-name">
+                                <a href="/">
+                                    <img id="logo" width="100" height="45" src="@Url.Content("~/Content/images/logos/craft-logo.png")" alt="autism">
+                                </a>
+                            </div>
+                            @*<div class="site-name">@Html.ActionLink("Craft", "Index", "Home")</div>*@
                             <div class="site-slogan">Career Development for the Autistic</div>
                         </div>
 
