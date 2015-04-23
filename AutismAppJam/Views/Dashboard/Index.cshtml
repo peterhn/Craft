@@ -83,9 +83,7 @@
                             </div>
                         </div>
                     </div>
-                }
-                else
-                {
+                } else {
                     <div class="panel panel-primary">
                         <div class="panel-body">
                             <div class="container-fluid">
@@ -113,19 +111,61 @@
                                         <br />
                                     </div>
                                 </div>
-                                @foreach (var occupation in Model.OccupationalTrends)
-                                {
-                                    <div class="row-fluid">
-                                        <div class="col-lg-6">
-                                            <p class="occupationalTitle">@occupation.Occupation</p>
-                                            <p class="occupational">@occupation.OccupationDescription</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
-                                        </div>
+                                <div class="row-fluid">
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                            @{
+                                            string[] collapse = {"collapseOne","collapseTwo","collapseThree","collapseFour","collapseFive"};
+                                            string[] headings = { "headingOne", "headingTwo", "headingThree", "headingFour", "headingFive" };
+                                            int current = 0;
+                                            }
+
+                                            @foreach (var occupation in Model.OccupationalTrends)
+                                                {
+                                                    if (current == 0){
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="@headings[current]">
+                                                                <h4 class="panel-title">
+                                                                    <a data-toggle="collapse" data-parent="#accordion" href="#@collapse[current]" aria-expanded="true" aria-controls="@collapse[current]">
+                                                                        @occupation.Occupation
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="@collapse[current]" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="@headings[current]" aria-expanded="true">
+                                                                <div class="panel-body">
+                                                                    <div class="col-lg-6">
+                                                                        <p class="occupational">@occupation.OccupationDescription</p>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    } else {
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="@headings[current]">
+                                                                <h4 class="panel-title">
+                                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#@collapse[current]" aria-expanded="false" aria-controls="@collapse[current]">
+                                                                        @occupation.Occupation
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="@collapse[current]" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headings[current]" aria-expanded="false">
+                                                                <div class="panel-body">
+                                                                    <div class="col-lg-6">
+                                                                        <p class="occupational">@occupation.OccupationDescription</p>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    current++;
+                                                }
                                     </div>
-                                }
-                            </div>
+                                </div>
 
                             @if(Model.User.AttentionSpanId == null)
                             {
@@ -136,6 +176,7 @@
                                 </div>
                             }
 
+                        </div>
                         </div>
                     </div>
                 }
