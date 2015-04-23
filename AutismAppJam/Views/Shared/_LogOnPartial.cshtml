@@ -1,8 +1,9 @@
 ﻿@if(Request.IsAuthenticated) {
     <div>
         Welcome, @User.Identity.Name!
-    </div>
+    
     <a href="/Account/LogOff">Sign Out</a>
+    </div>
 }
 else {
     <a href="/Account/LogOn">Login</a>

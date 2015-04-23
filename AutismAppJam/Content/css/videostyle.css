@@ -1,0 +1,42 @@
+﻿    .body {
+        margin-top: 6em;
+    }
+
+    .buttonstyle {
+        margin: 1em;
+    }
+
+    .centerJumbo {
+        text-align: center;
+        background-color: #FFFFFF;
+    }
+
+    .type {
+        margin: 0;
+    }
+
+    .subtype {
+        margin-top: 17px;
+    }
+
+    .description {
+        margin-top: 22px;
+    }
+
+    .occupationalTitle {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .occupational {
+        font-size: 12px;
+    }
+
+    .occupationalImage {
+        max-height: 50%;
+        max-width: 50%;
+    }
+
+    .imageLabel {
+        text-align:center;
+    }
