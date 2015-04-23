@@ -1,9 +1,20 @@
 ﻿@if(Request.IsAuthenticated) {
-    <div>
-        Welcome, @User.Identity.Name!
-    </div>
-    <a href="/Account/LogOff">Sign Out</a>
+        <div class="row" style="margin-right:10px;">
+            <ul class="nav navbar-nav navbar-right">
+                <li>Welcome, @User.Identity.Name!</li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul style="display:block" class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li><a href="/Account/LogOff">Sign Out</a></li>
+            </ul>
+        </div>
 }
 else {
-    <a href="/Account/LogOn">Login</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li><a href="home#about">About</a></li>
+            <li><a href="/Account/LogOn">Login</a></li>
+        </ul>
 }

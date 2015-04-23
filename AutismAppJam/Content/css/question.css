@@ -12,9 +12,15 @@ div.group1, div.group2, div.group3, div.group4, div.group5, div.group6, div.grou
     width: 70%;
     margin: 0 auto;
 }
+ 
+.fixed-header-on h2 {
+    visibility: hidden;
+}
 
 .top-content {
     float: left;
+    clear: right;
+    margin-bottom: 1em;
 }
 
 .questions {
@@ -28,16 +34,26 @@ div.group1, div.group2, div.group3, div.group4, div.group5, div.group6, div.grou
     display:none; 
     padding:20px;
     min-width:800px;
-    min-height: 360px;
+    min-height: 540px;
+
 }
 
 .b-close {
     cursor:pointer;
     position:absolute;
-    left: 70px;
-    top:50px;
+    left: 360px;
+    top:500px;
+ 
 }
 
 .progress {
     margin-top: 2em;
+}
+
+img.puppy{
+    margin: auto;
+}
+
+.finish-section {
+    margin-top:1em;
 }

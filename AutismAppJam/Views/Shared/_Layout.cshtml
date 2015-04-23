@@ -73,14 +73,8 @@
 
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                            @if (!Request.IsAuthenticated)
-                                            {
-                                                <li><a href="home#about">About</a></li>
-                                            }
-                                            <li>@Html.Partial("_LogOnPartial")</li>
-                                        </ul>
+                                        @Html.Partial("_LogOnPartial")
+                                        
                                     </div>
 
                                 </div>
