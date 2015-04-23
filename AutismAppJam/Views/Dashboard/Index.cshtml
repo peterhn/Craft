@@ -43,7 +43,6 @@
         max-height: 50%;
         max-width: 50%;
     }
-
 </style>
 
 <div>
@@ -55,17 +54,24 @@
                 @if (Model.User.PersonalityType == null)
                 {
                     <img src="../Content/images/defaultProfile.jpg" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
+                    <button type="button" class="buttonstyle btn btn-default active">Profile</button>
+                }
+                else if(Model.User.AttentionSpanId != null)
+                {
+                    <img src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
+                    <button type="button" class="buttonstyle btn btn-default active">Profile</button>
+                    @*<button type="button" class="buttonstyle btn btn-default">Video Archive</button>*@
+                    @Html.ActionLink("Video Archive", "Index", "Videos", null, new { @class = "btn btn-default buttonstyle" })
+                    @Html.ActionLink("Interview Prep", "Index", "Interview", null, new { @class = "btn btn-default buttonstyle" })
+                    @*<button type="button" class="buttonstyle btn btn-default">Career Stories</button>*@
+
                 }
                 else
                 {
                     <img src="@Model.Personality.PersonalityImageURL" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
-
+                    <button type="button" class="buttonstyle btn btn-default active">Profile</button>
                 }
-                <button type="button" class="buttonstyle btn btn-default active">Profile</button>
-                @*<button type="button" class="buttonstyle btn btn-default">Video Archive</button>*@
-                @Html.ActionLink("Video Archive", "Index", "Videos", null, new { @class = "btn btn-default buttonstyle" })
-                @Html.ActionLink("Interview Prep", "Index", "Interview", null, new { @class = "btn btn-default buttonstyle" })
-                <button type="button" class="buttonstyle btn btn-default">Career Stories</button>
+
 
             </div>
             <div class="col-lg-10">
@@ -83,100 +89,113 @@
                             </div>
                         </div>
                     </div>
-                } else {
+                }
+                else
+                {
                     <div class="panel panel-primary">
                         <div class="panel-body">
                             <div class="container-fluid">
                                 <div class="row-fluid">
                                     <div class="col-lg-3">
                                         <h1 class="type">TYPE: @Model.Personality.PersonalityType</h1>
-                                    </div>
-                                    <div class="col-lg-3 subtype">
+
                                         <h3 class="type"><q>@Model.Personality.PersonalityName</q></h3>
                                     </div>
-                                    <div class="col-lg-6 description">
+                                    <div class="col-lg-9 description">
                                         <h6 class="type">@Model.Personality.PersonalityDescription </h6>
                                     </div>
                                 </div>
                                 <br />
                                 <br />
                                 <hr />
-                                <div class="row-fluid">
-                                    <div class="col-lg-6">
-                                        <h5>Occupation Matches</h5>
+
+                                @if (Model.User.AttentionSpanId == null)
+                                {
+                                    <div class="row">
+                                        <div class="text-center">
+                                            @Html.ActionLink("Take next assesment to view occupational matches!", "Index", "StroopTest", null, new { @class = "btn btn-primary" })
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <br />
-                                        <br />
-                                        <br />
+                                }
+                                else
+                                {
+                                    <div class="row-fluid">
+                                        <div class="col-lg-6">
+                                            <h5>Occupation Matches</h5>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row-fluid">
-                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="row-fluid">
+                                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                             @{
-                                            string[] collapse = {"collapseOne","collapseTwo","collapseThree","collapseFour","collapseFive"};
-                                            string[] headings = { "headingOne", "headingTwo", "headingThree", "headingFour", "headingFive" };
-                                            int current = 0;
+                                    string[] collapse = { "collapseOne", "collapseTwo", "collapseThree", "collapseFour", "collapseFive" };
+                                    string[] headings = { "headingOne", "headingTwo", "headingThree", "headingFour", "headingFive" };
+                                    int current = 0;
                                             }
 
                                             @foreach (var occupation in Model.OccupationalTrends)
+                                            {
+                                                if (current == 0)
                                                 {
-                                                    if (current == 0){
-                                                        <div class="panel panel-default">
-                                                            <div class="panel-heading" role="tab" id="@headings[current]">
-                                                                <h4 class="panel-title">
-                                                                    <a data-toggle="collapse" data-parent="#accordion" href="#@collapse[current]" aria-expanded="true" aria-controls="@collapse[current]">
-                                                                        @occupation.Occupation
-                                                                    </a>
-                                                                </h4>
-                                                            </div>
-                                                            <div id="@collapse[current]" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="@headings[current]" aria-expanded="true">
-                                                                <div class="panel-body">
-                                                                    <div class="col-lg-6">
-                                                                        <p class="occupational">@occupation.OccupationDescription</p>
-                                                                    </div>
-                                                                    <div class="col-lg-6">
-                                                                        <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
-                                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="@headings[current]">
+                                                            <h4 class="panel-title">
+                                                                <a data-toggle="collapse" data-parent="#accordion" href="#@collapse[current]" aria-expanded="true" aria-controls="@collapse[current]">
+                                                                    @occupation.Occupation
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="@collapse[current]" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="@headings[current]" aria-expanded="true">
+                                                            <div class="panel-body">
+                                                                <div class="col-lg-6">
+                                                                    <p class="occupational">@occupation.OccupationDescription</p>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    } else {
-                                                        <div class="panel panel-default">
-                                                            <div class="panel-heading" role="tab" id="@headings[current]">
-                                                                <h4 class="panel-title">
-                                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#@collapse[current]" aria-expanded="false" aria-controls="@collapse[current]">
-                                                                        @occupation.Occupation
-                                                                    </a>
-                                                                </h4>
-                                                            </div>
-                                                            <div id="@collapse[current]" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headings[current]" aria-expanded="false">
-                                                                <div class="panel-body">
-                                                                    <div class="col-lg-6">
-                                                                        <p class="occupational">@occupation.OccupationDescription</p>
-                                                                    </div>
-                                                                    <div class="col-lg-6">
-                                                                        <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    current++;
+                                                    </div>
                                                 }
+                                                else
+                                                {
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="@headings[current]">
+                                                            <h4 class="panel-title">
+                                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#@collapse[current]" aria-expanded="false" aria-controls="@collapse[current]">
+                                                                    @occupation.Occupation
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="@collapse[current]" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headings[current]" aria-expanded="false">
+                                                            <div class="panel-body">
+                                                                <div class="col-lg-6">
+                                                                    <p class="occupational">@occupation.OccupationDescription</p>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <img src="@occupation.OccupationImageURL" alt="@occupation.Occupation" class="img-thumbnail img-responsive center-block occupationalImage" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                current++;
+                                            }
+                                        </div>
                                     </div>
-                                </div>
-
-                            @if(Model.User.AttentionSpanId == null)
-                            {
-                                <div class="row">
-                                    <div class="text-center">
-                                        @Html.ActionLink("Take next assesment", "Index", "StroopTest", null, new { @class = "btn btn-primary" })
+                                    <div class="row text-center">
+                                        @Html.ActionLink("View Inteview Tutorials", "Index", "Interview", null, new { @class = "btn btn-primary" })
                                     </div>
-                                </div>
-                            }
+                                }
 
-                        </div>
+
+
+
+                            </div>
                         </div>
                     </div>
                 }
