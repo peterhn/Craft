@@ -1,176 +1,140 @@
 ﻿@{
     ViewBag.Title = "Video Archive";
 }
+<link href="@Url.Content("~/Content/css/videostyle.css")" type="text/css" rel="stylesheet" />
+<link href="@Url.Content("~/Content/css/sidebarstyle.css")" type="text/css" rel="stylesheet" />
 
-<style>
-    .body {
-        margin-top: 6em;
-    }
-
-    .buttonstyle {
-        margin: 1em;
-    }
-
-    .centerJumbo {
-        text-align: center;
-        background-color: #FFFFFF;
-    }
-
-    .type {
-        margin: 0;
-    }
-
-    .subtype {
-        margin-top: 17px;
-    }
-
-    .description {
-        margin-top: 22px;
-    }
-
-    .occupationalTitle {
-        font-size: 12px;
-        font-weight: bold;
-    }
-
-    .occupational {
-        font-size: 12px;
-    }
-
-    .occupationalImage {
-        max-height: 50%;
-        max-width: 50%;
-    }
-
-    .imageLabel {
-        text-align:center;
-    }
-</style>
-
-<div class="panel panel-primary">
-    <div class="panel-body">
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/IzsJktw55J8/mqdefault.jpg" alt="Bus People" class="center-block" />
-                            <h3 class="imageLabel">Life of a Bus Boy</h3>
+<div class="container-fluid">
+    <div class="row-fluid">
+            @Html.Partial("_PartialSideBar")
+        <div class="col-lg-10">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/IzsJktw55J8/mqdefault.jpg" alt="Bus People" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Bus Boy</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/awFamp3rK6U/mqdefault.jpg" alt="Chef" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Chef</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/GdUPTnYbhHw/mqdefault.jpg" alt="Accountant" class="center-block" />
+                                        <h3 class="imageLabel">Life of an Accountant</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/awFamp3rK6U/mqdefault.jpg" alt="Chef" class="center-block" />
-                            <h3 class="imageLabel">Life of a Chef</h3>
+                        <div class="row-fluid">
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/TwJTt5EaBCU/mqdefault.jpg" alt="Photographer" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Photographer</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/pDhZPFGZbZg/mqdefault.jpg" alt="Film Composer" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Film Composer</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/yJuJuxfOM9M/mqdefault.jpg" alt="Journalist" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Journalist</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/GdUPTnYbhHw/mqdefault.jpg" alt="Accountant" class="center-block" />
-                            <h3 class="imageLabel">Life of an Accountant</h3>
+                        <div class="row-fluid">
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/c0o6BPYKBiA/mqdefault.jpg" alt="Video Game Designer" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Video Game Designer</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/vt79JcPfZQA/mqdefault.jpg" alt="Software Engineer" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Software Engineer</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/ocqceS7KlzE/mqdefault.jpg" alt="Mechanical Engineer" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Mechanical Engineer</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/-JcQEQd8hkY/mqdefault.jpg" alt="Healthcare Administrator" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Healthcare Administrator</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/AqNAxCyTh-c/mqdefault.jpg" alt="Laboratory Technician" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Laboratory Technician</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/BDcW1r5ociM/mqdefault.jpg" alt="Auto Technician" class="center-block" />
+                                        <h3 class="imageLabel">Life of an Auto Technician</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="col-lg-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <img src="http://i.ytimg.com/vi/RFBi7RJFndM/mqdefault.jpg" alt="Farmer" class="center-block" />
+                                        <h3 class="imageLabel">Life of a Farmer</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+
+                            </div>
+                            <div class="col-lg-4">
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/TwJTt5EaBCU/mqdefault.jpg" alt="Photographer" class="center-block" />
-                            <h3 class="imageLabel">Life of a Photographer</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/pDhZPFGZbZg/mqdefault.jpg" alt="Film Composer" class="center-block" />
-                            <h3 class="imageLabel">Life of a Film Composer</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/yJuJuxfOM9M/mqdefault.jpg" alt="Journalist" class="center-block" />
-                            <h3 class="imageLabel">Life of a Journalist</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/c0o6BPYKBiA/mqdefault.jpg" alt="Video Game Designer" class="center-block" />
-                            <h3 class="imageLabel">Life of a Video Game Designer</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/vt79JcPfZQA/mqdefault.jpg" alt="Software Engineer" class="center-block" />
-                            <h3 class="imageLabel">Life of a Software Engineer</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/ocqceS7KlzE/mqdefault.jpg" alt="Mechanical Engineer" class="center-block" />
-                            <h3 class="imageLabel">Life of a Mechanical Engineer</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/-JcQEQd8hkY/mqdefault.jpg" alt="Healthcare Administrator" class="center-block" />
-                            <h3 class="imageLabel">Life of a Healthcare Administrator</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/AqNAxCyTh-c/mqdefault.jpg" alt="Laboratory Technician" class="center-block" />
-                            <h3 class="imageLabel">Life of a Laboratory Technician</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/BDcW1r5ociM/mqdefault.jpg" alt="Auto Technician" class="center-block" />
-                            <h3 class="imageLabel">Life of an Auto Technician</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <img src="http://i.ytimg.com/vi/RFBi7RJFndM/mqdefault.jpg" alt="Farmer" class="center-block" />
-                            <h3 class="imageLabel">Life of a Farmer</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    
-                </div>
-                <div class="col-lg-4">
-                    
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
-
