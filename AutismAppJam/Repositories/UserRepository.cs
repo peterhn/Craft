@@ -90,13 +90,13 @@ namespace AutismAppJam.Repositories
             }
         }
 
-        public bool UpdateUserAttentionSpan(string userId, AttentionSpan attentionSpan)
+        public bool UpdateUserAttentionSpan(string userId, int attentionSpan)
         {
             try
             {
                 using (var db = Data.DatabaseContext.GetDbConnection())
                 {
-                    string query = string.Format("UPDATE Users SET AttentionSpan = '{0}' WHERE UserId = '{1}'", attentionSpan.AttentionSpanId , userId);
+                    string query = string.Format("UPDATE Users SET AttentionSpan = '{0}' WHERE UserId = '{1}'", attentionSpan , userId);
                     db.Execute(query);
                 }
 
