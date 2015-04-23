@@ -54,7 +54,7 @@
                 <!--Sidebar content-->
                 @if (Model.User.PersonalityType == null)
                 {
-                    <img src="../Content/images/defaultProfile.jpg" class="img-thumbnail img-responsive center-block" />
+                    <img src="../Content/images/defaultProfile.jpg" alt="@User.Identity.Name" class="img-thumbnail img-responsive center-block" />
                 }
                 else
                 {
