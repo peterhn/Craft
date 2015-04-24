@@ -267,6 +267,9 @@
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\banner1.jpg" />
     <Content Include="Content\images\defaultProfile.jpg" />
+    <Content Include="Content\images\logos\craft-logo.png" />
+    <Content Include="Content\images\logos\Craft-logoBlue.png" />
+    <Content Include="Content\images\logos\logo.png" />
     <Content Include="Content\images\MBTI.jpg" />
     <Content Include="Content\images\personality\ENFJ.jpg" />
     <Content Include="Content\images\personality\ENFP.jpg" />
