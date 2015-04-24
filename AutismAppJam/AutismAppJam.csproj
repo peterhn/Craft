@@ -267,6 +267,15 @@
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\banner1.jpg" />
     <Content Include="Content\images\defaultProfile.jpg" />
+    <Content Include="Content\images\interview prep\dress_for_success_raw.jpg" />
+    <Content Include="Content\images\interview prep\interview_etiquette_raw.jpg" />
+    <Content Include="Content\images\interview prep\organize_documents_raw.jpg" />
+    <Content Include="Content\images\interview prep\patiently_waiting_raw.jpg" />
+    <Content Include="Content\images\interview prep\practice_interview_raw.jpg" />
+    <Content Include="Content\images\interview prep\prepare_documents_raw.jpg" />
+    <Content Include="Content\images\interview prep\review_position_raw.jpg" />
+    <Content Include="Content\images\interview prep\thank_interviewer_1_raw.jpg" />
+    <Content Include="Content\images\interview prep\thank_interviewer_2_raw.jpg" />
     <Content Include="Content\images\logos\craft-logo.png" />
     <Content Include="Content\images\logos\Craft-logoBlue.png" />
     <Content Include="Content\images\logos\logo.png" />
@@ -419,6 +428,9 @@
       <LastGenOutput>AutismAppJam.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\craft-test.pubxml" />
+    <None Include="Properties\PublishProfiles\craftapp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\craftapp - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\craftrelease.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
