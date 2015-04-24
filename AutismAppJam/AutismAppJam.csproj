@@ -285,7 +285,6 @@
     <Content Include="Content\images\personality\ISFP.jpg" />
     <Content Include="Content\images\personality\ISTJ.jpg" />
     <Content Include="Content\images\personality\ISTP.jpg" />
-    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\occupation\accountant.jpg" />
     <Content Include="Content\images\occupation\administrator.jpg" />
     <Content Include="Content\images\occupation\agriculture.jpg" />
